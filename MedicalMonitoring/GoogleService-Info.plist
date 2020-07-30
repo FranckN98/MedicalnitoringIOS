@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1048478985217-dp8so5a3vh9rhk4h7eut00hf6m5ejv08.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1048478985217-dp8so5a3vh9rhk4h7eut00hf6m5ejv08</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDziX1EURlWGVfv5QHIdEXyEpUeQx5EOiM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1048478985217</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ema.MedicalMonitoring</string>
+	<key>PROJECT_ID</key>
+	<string>medical-monitoring-e4482</string>
+	<key>STORAGE_BUCKET</key>
+	<string>medical-monitoring-e4482.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1048478985217:ios:0b2131255656f2d9132400</string>
+	<key>DATABASE_URL</key>
+	<string>https://medical-monitoring-e4482.firebaseio.com</string>
+</dict>
+</plist>
