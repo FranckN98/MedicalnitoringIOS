@@ -3,18 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FC1D2870AFB4F33E8AACF50 /* Pods_MedicalMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743EAC22ED62CDBB3594094B /* Pods_MedicalMonitoring.framework */; };
+		3D816C9219EF7CAD0B3C7ACC /* Pods_MedicalMonitoring_MedicalMonitoringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0EF4EB0E2CACF2362663E0 /* Pods_MedicalMonitoring_MedicalMonitoringUITests.framework */; };
+		8588429324C741C600813B6D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588429224C741C600813B6D /* MenuViewController.swift */; };
+		8588429524C83A5300813B6D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588429424C83A5300813B6D /* Constants.swift */; };
+		85B3DA1724D0F465004524CC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DA1624D0F465004524CC /* InformationViewController.swift */; };
+		85B3DA1924D0F84A004524CC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DA1824D0F84A004524CC /* HistoryViewController.swift */; };
+		85B3DA1F24D1B555004524CC /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DA1E24D1B555004524CC /* ListElement.swift */; };
 		85C589BD24C5BC82007DB020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589BC24C5BC82007DB020 /* AppDelegate.swift */; };
 		85C589BF24C5BC82007DB020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589BE24C5BC82007DB020 /* SceneDelegate.swift */; };
 		85C589C124C5BC82007DB020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589C024C5BC82007DB020 /* ViewController.swift */; };
 		85C589C424C5BC82007DB020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C589C224C5BC82007DB020 /* Main.storyboard */; };
-		85C589C624C5BC84007DB020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C589C524C5BC84007DB020 /* Assets.xcassets */; };
 		85C589C924C5BC84007DB020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C589C724C5BC84007DB020 /* LaunchScreen.storyboard */; };
 		85C589D424C5BC85007DB020 /* MedicalMonitoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589D324C5BC85007DB020 /* MedicalMonitoringTests.swift */; };
 		85C589DF24C5BC85007DB020 /* MedicalMonitoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589DE24C5BC85007DB020 /* MedicalMonitoringUITests.swift */; };
+		85C589ED24C5BCB9007DB020 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85C589EC24C5BCB9007DB020 /* GoogleService-Info.plist */; };
+		85C589F024C5C0F0007DB020 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589EF24C5C0F0007DB020 /* LoginViewController.swift */; };
+		85C589F224C5C119007DB020 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589F124C5C119007DB020 /* RegistrationViewController.swift */; };
+		85C589F524C5F938007DB020 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C589F424C5F938007DB020 /* Utilities.swift */; };
+		85CFEB3F24D219CC00A5CFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CFEB3E24D219CC00A5CFB1 /* Assets.xcassets */; };
+		85CFEB4924D2D00500A5CFB1 /* patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFEB4824D2D00500A5CFB1 /* patient.swift */; };
+		85CFEB4B24D2F40300A5CFB1 /* EditInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFEB4A24D2F40300A5CFB1 /* EditInformationViewController.swift */; };
+		ABEFD20CD8E92F0A7F0BECFF /* Pods_MedicalMonitoringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDD85A8204171ABFCCB6236 /* Pods_MedicalMonitoringTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +49,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A35A3168B284A8747A5F3D0 /* Pods-MedicalMonitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalMonitoring.debug.xcconfig"; path = "Target Support Files/Pods-MedicalMonitoring/Pods-MedicalMonitoring.debug.xcconfig"; sourceTree = "<group>"; };
+		1A900121A0768A30B10A3C68 /* Pods-MedicalMonitoring-MedicalMonitoringUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalMonitoring-MedicalMonitoringUITests.release.xcconfig"; path = "Target Support Files/Pods-MedicalMonitoring-MedicalMonitoringUITests/Pods-MedicalMonitoring-MedicalMonitoringUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5151C1DB200EDB3DE68E5C4D /* Pods-MedicalMonitoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalMonitoringTests.release.xcconfig"; path = "Target Support Files/Pods-MedicalMonitoringTests/Pods-MedicalMonitoringTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CCF95C6CBEC6BD1A536A099 /* Pods-MedicalMonitoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalMonitoringTests.debug.xcconfig"; path = "Target Support Files/Pods-MedicalMonitoringTests/Pods-MedicalMonitoringTests.debug.xcconfig"; sourceTree = "<group>"; };
+		743EAC22ED62CDBB3594094B /* Pods_MedicalMonitoring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedicalMonitoring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8588429224C741C600813B6D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8588429424C83A5300813B6D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		85B3DA1624D0F465004524CC /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		85B3DA1824D0F84A004524CC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		85B3DA1E24D1B555004524CC /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
 		85C589B924C5BC82007DB020 /* MedicalMonitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalMonitoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C589BC24C5BC82007DB020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C589BE24C5BC82007DB020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		85C589C024C5BC82007DB020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85C589C324C5BC82007DB020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		85C589C524C5BC84007DB020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85C589C824C5BC84007DB020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85C589CA24C5BC84007DB020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85C589CF24C5BC85007DB020 /* MedicalMonitoringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicalMonitoringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +72,17 @@
 		85C589DA24C5BC85007DB020 /* MedicalMonitoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicalMonitoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C589DE24C5BC85007DB020 /* MedicalMonitoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalMonitoringUITests.swift; sourceTree = "<group>"; };
 		85C589E024C5BC85007DB020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C589EC24C5BCB9007DB020 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85C589EF24C5C0F0007DB020 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		85C589F124C5C119007DB020 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = /Users/ema/Desktop/Aufgaben/MedicalMonitoring/MedicalMonitoring/ViewControllers/RegistrationViewController.swift; sourceTree = "<absolute>"; };
+		85C589F424C5F938007DB020 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		85CFEB3E24D219CC00A5CFB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/MedicalMonitoring/MedicalMonitoring/Assets.xcassets; sourceTree = "<group>"; };
+		85CFEB4824D2D00500A5CFB1 /* patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patient.swift; sourceTree = "<group>"; };
+		85CFEB4A24D2F40300A5CFB1 /* EditInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInformationViewController.swift; sourceTree = "<group>"; };
+		89A5E662BE10BFF82D629CC4 /* Pods-MedicalMonitoring-MedicalMonitoringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalMonitoring-MedicalMonitoringUITests.debug.xcconfig"; path = "Target Support Files/Pods-MedicalMonitoring-MedicalMonitoringUITests/Pods-MedicalMonitoring-MedicalMonitoringUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		94DF458173774FB21B37B57F /* Pods-MedicalMonitoring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalMonitoring.release.xcconfig"; path = "Target Support Files/Pods-MedicalMonitoring/Pods-MedicalMonitoring.release.xcconfig"; sourceTree = "<group>"; };
+		AE0EF4EB0E2CACF2362663E0 /* Pods_MedicalMonitoring_MedicalMonitoringUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedicalMonitoring_MedicalMonitoringUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDD85A8204171ABFCCB6236 /* Pods_MedicalMonitoringTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedicalMonitoringTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC1D2870AFB4F33E8AACF50 /* Pods_MedicalMonitoring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEFD20CD8E92F0A7F0BECFF /* Pods_MedicalMonitoringTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +106,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D816C9219EF7CAD0B3C7ACC /* Pods_MedicalMonitoring_MedicalMonitoringUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		729C7A801E16F4B075FC700C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				743EAC22ED62CDBB3594094B /* Pods_MedicalMonitoring.framework */,
+				AE0EF4EB0E2CACF2362663E0 /* Pods_MedicalMonitoring_MedicalMonitoringUITests.framework */,
+				FFDD85A8204171ABFCCB6236 /* Pods_MedicalMonitoringTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85C589B024C5BC82007DB020 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +130,8 @@
 				85C589D224C5BC85007DB020 /* MedicalMonitoringTests */,
 				85C589DD24C5BC85007DB020 /* MedicalMonitoringUITests */,
 				85C589BA24C5BC82007DB020 /* Products */,
+				A612A5CB566DEE82F53EF3A6 /* Pods */,
+				729C7A801E16F4B075FC700C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +148,15 @@
 		85C589BB24C5BC82007DB020 /* MedicalMonitoring */ = {
 			isa = PBXGroup;
 			children = (
+				85C589F324C5F918007DB020 /* Helpers */,
+				85C589EE24C5C0D9007DB020 /* ViewControllers */,
 				85C589BC24C5BC82007DB020 /* AppDelegate.swift */,
 				85C589BE24C5BC82007DB020 /* SceneDelegate.swift */,
-				85C589C024C5BC82007DB020 /* ViewController.swift */,
 				85C589C224C5BC82007DB020 /* Main.storyboard */,
-				85C589C524C5BC84007DB020 /* Assets.xcassets */,
+				85CFEB3E24D219CC00A5CFB1 /* Assets.xcassets */,
 				85C589C724C5BC84007DB020 /* LaunchScreen.storyboard */,
 				85C589CA24C5BC84007DB020 /* Info.plist */,
+				85C589EC24C5BCB9007DB020 /* GoogleService-Info.plist */,
 			);
 			path = MedicalMonitoring;
 			sourceTree = "<group>";
@@ -128,6 +179,44 @@
 			path = MedicalMonitoringUITests;
 			sourceTree = "<group>";
 		};
+		85C589EE24C5C0D9007DB020 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				85C589C024C5BC82007DB020 /* ViewController.swift */,
+				85C589F124C5C119007DB020 /* RegistrationViewController.swift */,
+				85C589EF24C5C0F0007DB020 /* LoginViewController.swift */,
+				8588429224C741C600813B6D /* MenuViewController.swift */,
+				85B3DA1824D0F84A004524CC /* HistoryViewController.swift */,
+				85B3DA1624D0F465004524CC /* InformationViewController.swift */,
+				85CFEB4A24D2F40300A5CFB1 /* EditInformationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		85C589F324C5F918007DB020 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85C589F424C5F938007DB020 /* Utilities.swift */,
+				8588429424C83A5300813B6D /* Constants.swift */,
+				85B3DA1E24D1B555004524CC /* ListElement.swift */,
+				85CFEB4824D2D00500A5CFB1 /* patient.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A612A5CB566DEE82F53EF3A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A35A3168B284A8747A5F3D0 /* Pods-MedicalMonitoring.debug.xcconfig */,
+				94DF458173774FB21B37B57F /* Pods-MedicalMonitoring.release.xcconfig */,
+				89A5E662BE10BFF82D629CC4 /* Pods-MedicalMonitoring-MedicalMonitoringUITests.debug.xcconfig */,
+				1A900121A0768A30B10A3C68 /* Pods-MedicalMonitoring-MedicalMonitoringUITests.release.xcconfig */,
+				5CCF95C6CBEC6BD1A536A099 /* Pods-MedicalMonitoringTests.debug.xcconfig */,
+				5151C1DB200EDB3DE68E5C4D /* Pods-MedicalMonitoringTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C589E324C5BC85007DB020 /* Build configuration list for PBXNativeTarget "MedicalMonitoring" */;
 			buildPhases = (
+				5CA6222DAC45A8DA3511BCF4 /* [CP] Check Pods Manifest.lock */,
 				85C589B524C5BC82007DB020 /* Sources */,
 				85C589B624C5BC82007DB020 /* Frameworks */,
 				85C589B724C5BC82007DB020 /* Resources */,
+				3DBA93A4F914689A5C6512B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C589E624C5BC85007DB020 /* Build configuration list for PBXNativeTarget "MedicalMonitoringTests" */;
 			buildPhases = (
+				DD6CE106AC92786FB67F130C /* [CP] Check Pods Manifest.lock */,
 				85C589CB24C5BC85007DB020 /* Sources */,
 				85C589CC24C5BC85007DB020 /* Frameworks */,
 				85C589CD24C5BC85007DB020 /* Resources */,
@@ -170,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C589E924C5BC85007DB020 /* Build configuration list for PBXNativeTarget "MedicalMonitoringUITests" */;
 			buildPhases = (
+				91AC1CD7BF70414D633BE1E0 /* [CP] Check Pods Manifest.lock */,
 				85C589D624C5BC85007DB020 /* Sources */,
 				85C589D724C5BC85007DB020 /* Frameworks */,
 				85C589D824C5BC85007DB020 /* Resources */,
+				93C13DE69774C16EBAAA5886 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C589C924C5BC84007DB020 /* LaunchScreen.storyboard in Resources */,
-				85C589C624C5BC84007DB020 /* Assets.xcassets in Resources */,
+				85C589ED24C5BCB9007DB020 /* GoogleService-Info.plist in Resources */,
+				85CFEB3F24D219CC00A5CFB1 /* Assets.xcassets in Resources */,
 				85C589C424C5BC82007DB020 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,14 +349,127 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DBA93A4F914689A5C6512B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MedicalMonitoring/Pods-MedicalMonitoring-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MedicalMonitoring/Pods-MedicalMonitoring-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MedicalMonitoring/Pods-MedicalMonitoring-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CA6222DAC45A8DA3511BCF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MedicalMonitoring-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91AC1CD7BF70414D633BE1E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MedicalMonitoring-MedicalMonitoringUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93C13DE69774C16EBAAA5886 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MedicalMonitoring-MedicalMonitoringUITests/Pods-MedicalMonitoring-MedicalMonitoringUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MedicalMonitoring-MedicalMonitoringUITests/Pods-MedicalMonitoring-MedicalMonitoringUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MedicalMonitoring-MedicalMonitoringUITests/Pods-MedicalMonitoring-MedicalMonitoringUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD6CE106AC92786FB67F130C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MedicalMonitoringTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85C589B524C5BC82007DB020 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C589F524C5F938007DB020 /* Utilities.swift in Sources */,
+				85C589F024C5C0F0007DB020 /* LoginViewController.swift in Sources */,
 				85C589C124C5BC82007DB020 /* ViewController.swift in Sources */,
+				85CFEB4B24D2F40300A5CFB1 /* EditInformationViewController.swift in Sources */,
+				85B3DA1924D0F84A004524CC /* HistoryViewController.swift in Sources */,
+				8588429324C741C600813B6D /* MenuViewController.swift in Sources */,
 				85C589BD24C5BC82007DB020 /* AppDelegate.swift in Sources */,
+				8588429524C83A5300813B6D /* Constants.swift in Sources */,
 				85C589BF24C5BC82007DB020 /* SceneDelegate.swift in Sources */,
+				85C589F224C5C119007DB020 /* RegistrationViewController.swift in Sources */,
+				85B3DA1F24D1B555004524CC /* ListElement.swift in Sources */,
+				85B3DA1724D0F465004524CC /* InformationViewController.swift in Sources */,
+				85CFEB4924D2D00500A5CFB1 /* patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +640,7 @@
 		};
 		85C589E424C5BC85007DB020 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A35A3168B284A8747A5F3D0 /* Pods-MedicalMonitoring.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +658,7 @@
 		};
 		85C589E524C5BC85007DB020 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94DF458173774FB21B37B57F /* Pods-MedicalMonitoring.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +676,7 @@
 		};
 		85C589E724C5BC85007DB020 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CCF95C6CBEC6BD1A536A099 /* Pods-MedicalMonitoringTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +698,7 @@
 		};
 		85C589E824C5BC85007DB020 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5151C1DB200EDB3DE68E5C4D /* Pods-MedicalMonitoringTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +720,7 @@
 		};
 		85C589EA24C5BC85007DB020 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89A5E662BE10BFF82D629CC4 /* Pods-MedicalMonitoring-MedicalMonitoringUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +740,7 @@
 		};
 		85C589EB24C5BC85007DB020 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A900121A0768A30B10A3C68 /* Pods-MedicalMonitoring-MedicalMonitoringUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

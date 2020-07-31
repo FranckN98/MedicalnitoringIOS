@@ -11,8 +11,11 @@ import Foundation
 
 struct Constants {
 
+    static var userid : String!
+    
     struct Storyboard {
-        
-      
+      static let menuViewController = "MenuVC"
+      static let editViewController = "editVC"
+      static let infoViewController = "infoVC"
     }
 }
