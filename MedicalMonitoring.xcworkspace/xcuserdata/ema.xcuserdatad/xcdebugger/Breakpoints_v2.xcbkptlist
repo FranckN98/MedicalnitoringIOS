@@ -30,8 +30,8 @@
             filePath = "MedicalMonitoring/ViewControllers/InformationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "containerView"
             landmarkType = "24">
          </BreakpointContent>
@@ -66,6 +66,84 @@
             endingLineNumber = "26"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F094EC10-3F32-4A3F-A1CF-6627C513762B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MedicalMonitoring/Helpers/ListElement.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ListElement"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F094EC10-3F32-4A3F-A1CF-6627C513762B - 8fc903f9a5397e26"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MedicalMonitoring.ListElement.value.getter : __C.UILabel"
+                  moduleName = "MedicalMonitoring"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ema/Desktop/Aufgaben/MedicalMonitoring/MedicalMonitoring/Helpers/ListElement.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "F094EC10-3F32-4A3F-A1CF-6627C513762B - c314096b25224232"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MedicalMonitoring.ListElement.value.setter : __C.UILabel"
+                  moduleName = "MedicalMonitoring"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ema/Desktop/Aufgaben/MedicalMonitoring/MedicalMonitoring/Helpers/ListElement.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "F094EC10-3F32-4A3F-A1CF-6627C513762B - 231153ece6ff5523"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MedicalMonitoring.ListElement.value.modify : __C.UILabel"
+                  moduleName = "MedicalMonitoring"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ema/Desktop/Aufgaben/MedicalMonitoring/MedicalMonitoring/Helpers/ListElement.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "F094EC10-3F32-4A3F-A1CF-6627C513762B - c6029e0052926b32"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MedicalMonitoring.ListElement.value.modify : __C.UILabel with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MedicalMonitoring"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ema/Desktop/Aufgaben/MedicalMonitoring/MedicalMonitoring/Helpers/ListElement.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

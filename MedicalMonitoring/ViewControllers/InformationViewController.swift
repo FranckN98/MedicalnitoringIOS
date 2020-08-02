@@ -10,7 +10,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class ListElemen {
+class ListElemen
+{
     
     
     // MARK: - Init
@@ -18,15 +19,16 @@ class ListElemen {
     var value: String
     var image: UIImage
     
-    init( title:String, value:String , image:UIImage) {
-        
+    init( title:String, value:String , image:UIImage)
+    {
         self.image = image
         self.title = title
         self.value = value
     }
 }
 
-class InformationViewController: UIViewController {
+class InformationViewController: UIViewController
+{
       // MARK: - Properties
         
         var tableView = UITableView()
@@ -44,7 +46,8 @@ class InformationViewController: UIViewController {
         ListElemen( title: "Diabetes", value: "", image: #imageLiteral(resourceName: "diabetes"))
         ]
         var currentPatient : patient!
-        var otherItems : ListElemen!
+        var patientKey : String!
+        var otherItems : [[String:String]] = []
         lazy var containerView: UIView = {
             let view = UIView()
             view.backgroundColor = .mainBlue
@@ -77,18 +80,77 @@ class InformationViewController: UIViewController {
             
             return view
         }()
-    
-    // MARK: Database References
+        let profileImageView: UIImageView = {
+           let iv = UIImageView()
+           iv.image =  #imageLiteral(resourceName: "profilExample")
+           iv.contentMode = .scaleAspectFill
+           iv.clipsToBounds = true
+           iv.layer.borderWidth = 4
+           iv.layer.borderColor = UIColor.white.cgColor
+           return iv
+       }()
+       
+       let ageLabel: UILabel = {
+           let label = UILabel()
+           label.textAlignment = .center
+           label.text = "Age"
+           label.font = UIFont.boldSystemFont(ofSize: 20)
+           label.textColor = .white
+           return label
+          
+       }()
+   
+       let ageValue: UILabel = {
+          let label = UILabel()
+          label.textAlignment = .center
+           label.text = ""
+          label.font = UIFont.boldSystemFont(ofSize: 18)
+          label.textColor = .white
+       return label
+      
+      }()
+       
+      let weightLabel: UILabel = {
+           let label = UILabel()
+           label.textAlignment = .center
+           label.text = "Weight"
+           label.font = UIFont.boldSystemFont(ofSize: 20)
+           label.textColor = .white
+           return label
+          
+       }()
+   
+       let weightValue: UILabel = {
+           let label = UILabel()
+           label.textAlignment = .center
+           label.text = ""
+           label.font = UIFont.boldSystemFont(ofSize: 18)
+           label.textColor = .white
+           return label
+          
+       }()
+       
+       let nameLabel: UILabel = {
+           let label = UILabel()
+           label.textAlignment = .center
+           label.text = ""
+           label.font = UIFont.boldSystemFont(ofSize: 26)
+           label.textColor = .white
+           return label
+       }()
+
+   
     
             
-    //MARK: Floating Button
-        func floatingButton(){
+    //MARK: - Floating Button
+        func floatingButton()
+        {
             let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: 325, y: 785, width: 70, height: 70)
-            btn.setTitle("+", for: .normal)
-            btn.backgroundColor = .mainBlue
+            btn.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+            btn.backgroundColor = #colorLiteral(red: 0.8711801023, green: 0.9414077123, blue: 0.957699158, alpha: 1)
+            btn.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             btn.clipsToBounds = true
-            btn.layer.cornerRadius = 35
             btn.titleLabel?.font = .systemFont(ofSize: 40)
             btn.addTarget(self,action: #selector(self.buttonTapped), for: .touchUpInside)
             view.addSubview(btn)
@@ -99,156 +161,54 @@ class InformationViewController: UIViewController {
             btn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
             btn.layer.cornerRadius = 70 / 2
         }
-        @objc func buttonTapped(sender:UIButton)
+    // MARK: - Click on floating button Event
+        @IBAction func buttonTapped(sender:UIButton)
         {
-            let editViewController = self.storyboard?.instantiateViewController(identifier:Constants.Storyboard.editViewController) as? EditInformationViewController
-            editViewController?.patientakteItems = self.patientakteItems
-            self.view.window?.rootViewController = editViewController
-            self.view.window?.makeKeyAndVisible()
-            print("Button Tapped")
+            performSegue(withIdentifier: "backtoInfo", sender: nil)
+                
         }
-        let profileImageView: UIImageView = {
-            let iv = UIImageView()
-            iv.image =  #imageLiteral(resourceName: "profilExample")
-            iv.contentMode = .scaleAspectFill
-            iv.clipsToBounds = true
-            iv.layer.borderWidth = 4
-            iv.layer.borderColor = UIColor.white.cgColor
-            return iv
-        }()
-        
-        let ageLabel: UILabel = {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.text = "Age"
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-            label.textColor = .white
-            return label
-           
-        }()
-    
-        let ageValue: UILabel = {
-           let label = UILabel()
-           label.textAlignment = .center
-            label.text = ""
-           label.font = UIFont.boldSystemFont(ofSize: 18)
-           label.textColor = .white
-        return label
-       
-       }()
-        
-       let weightLabel: UILabel = {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.text = "Weight"
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-            label.textColor = .white
-            return label
-           
-        }()
-    
-        let weightValue: UILabel = {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.text = ""
-            label.font = UIFont.boldSystemFont(ofSize: 18)
-            label.textColor = .white
-            return label
-           
-        }()
-        
-        let nameLabel: UILabel = {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.text = ""
-            label.font = UIFont.boldSystemFont(ofSize: 26)
-            label.textColor = .white
-            return label
-        }()
-        
-        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+        {
+            if segue.identifier == "backtoInfo"
+            {
+                let editinfoVC = segue.destination as! EditInformationViewController
+                editinfoVC.patientakteItems = self.patientakteItems
+                editinfoVC.currentPatient = self.currentPatient
+                editinfoVC.otherItems = self.otherItems
+                editinfoVC.patientKey = self.patientKey
+                editinfoVC.patientakteItems.insert(ListElemen( title: "Weight", value: weightValue.text!, image: #imageLiteral(resourceName: "how-to-lose-weight-hub-image-scales.jpg")), at: 0)
+            }
+        }
     // MARK: Items initialisation
     
     
       
         // MARK: - Lifecycle
         
-        override func viewDidLoad() {
+        override func viewDidLoad()
+        {
             super.viewDidLoad()
-            
             view.backgroundColor = .white
-           
             view.addSubview(containerView)
             containerView.anchor(top: view.topAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 270)
-    
             configureTableView()
             floatingButton()
-            
-            // Set the firebase reference
-            let ref = Database.database().reference()
-            ref.child("PatientInformation").observe(.childAdded) { (snapshot) in
-               
-                if let dico = snapshot.value as? [String:AnyObject]
-                {
-                    if let id = dico["id"] as? String
-                    {
-                        if id == Constants.userid
-                        {
-                            self.currentPatient = patient(age: dico["age"] as! Int, allergies: dico["allergies"] as! String,
-                              athletic: dico["athletic"] as! String, bloodgroup: dico["bloodgroup"] as! String, diabetic: dico["diabetic"] as! String,
-                              diseases: dico["diseases"] as! String, ethnies: dico["ethnies"] as! String, gender: dico["gender"] as! String, job: dico["job"] as! String,
-                              name: dico["name"] as! String, other: dico["other"] as! [[String:String]], size: dico["size"] as! Int, smoker: dico["smoker"] as! String,
-                              vaccine: dico["vaccine"] as! String, vegetarian: dico["vegetarian"] as! String, weight: dico["weight"] as! Int)
-                          
-                            self.weightValue.text = String(self.currentPatient.weight)
-                            self.ageValue.text = String(self.currentPatient.age)
-                            self.nameLabel.text = self.currentPatient.name
-                            self.patientakteItems = [ListElemen( title: "Blood Group", value: self.currentPatient.bloodgroup, image: #imageLiteral(resourceName: "blood.jpg")),
-                                    ListElemen( title: "Size", value: String(self.currentPatient.size), image: #imageLiteral(resourceName: "size")),
-                                    ListElemen( title: "Smoker", value: self.currentPatient.smoker, image: #imageLiteral(resourceName: "smoke")),
-                                    ListElemen( title: "Vaccine", value: self.currentPatient.vaccine, image: #imageLiteral(resourceName: "vaccin")),
-                                    ListElemen( title: "Recently Contracted Disease", value: self.currentPatient.diseases , image: #imageLiteral(resourceName: "disease.jpg")),
-                                    ListElemen( title: "Allergies", value: self.currentPatient.allergies, image: #imageLiteral(resourceName: "allergy")),
-                                    ListElemen( title: "Athletic", value: self.currentPatient.athletic, image: #imageLiteral(resourceName: "sport")),
-                                    ListElemen( title: "Job", value: self.currentPatient.job, image: #imageLiteral(resourceName: "job")),
-                                    ListElemen( title: "Ethnies", value: self.currentPatient.ethnies, image: #imageLiteral(resourceName: "ethnie")),
-                                    ListElemen( title: "Vegetarian", value:self.currentPatient.vegetarian, image: #imageLiteral(resourceName: "vegetariean")),
-                                    ListElemen( title: "Gender", value:self.currentPatient.gender, image: #imageLiteral(resourceName: "gender")),
-                                    ListElemen( title: "Diabetes", value:self.currentPatient.diabetic, image: #imageLiteral(resourceName: "diabetes"))
-                                    ]
-                            
-                            let otherProperties = self.currentPatient.other
-                            for element in otherProperties
-                            {
-                                self.patientakteItems.append(ListElemen( title: element["label"]!, value: element["value"]!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection")))
-                            }
-                               
-                            
-                           
-                            self.tableView.reloadData()
-                            self.containerView.reloadInputViews()
-                          
-                            
-                            
-                          
-                        }
-                    }
-                   
-                }
-            }
-          
-
-        }
+            retrievingInformationFromDatabase()
         
-        override var preferredStatusBarStyle: UIStatusBarStyle {
+        }
+       
+        
+        override var preferredStatusBarStyle: UIStatusBarStyle
+        {
             return .lightContent
         }
         
       // MARK: TableView Configuration
        func configureTableView()
        {
-           view.addSubview(tableView)
-            setTableViewDelegate()
+            view.addSubview(tableView)
+            tableView.delegate = self
+            tableView.dataSource = self
             tableView.register(ListElement.self, forCellReuseIdentifier: "cellId")
             tableView.rowHeight = 110
             tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -258,24 +218,71 @@ class InformationViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
        }
     
-       func setTableViewDelegate()
-       {
-           tableView.delegate = self
-           tableView.dataSource = self
-       }
-        
+        func retrievingInformationFromDatabase()
+        {
+            let ref = Database.database().reference()
+            ref.child("PatientInformation").observe(.childAdded) { (snapshot) in
+                       
+            if let dico = snapshot.value as? [String:AnyObject]
+            {
+                if let id = dico["id"] as? String
+                {
+                    if id == Constants.userid
+                    {
+                        self.patientKey = snapshot.key
+                        self.currentPatient = patient(age: dico["age"] as! Int, allergies: dico["allergies"] as! String,
+                          athletic: dico["athletic"] as! String, bloodgroup: dico["bloodgroup"] as! String, diabetic: dico["diabetic"] as! String,
+                          diseases: dico["diseases"] as! String, ethnies: dico["ethnies"] as! String, gender: dico["gender"] as! String, job: dico["job"] as! String,
+                          name: dico["name"] as! String, other: dico["other"] as! [[String:String]], size: dico["size"] as! Int, smoker: dico["smoker"] as! String,
+                          vaccine: dico["vaccine"] as! String, vegetarian: dico["vegetarian"] as! String, weight: dico["weight"] as! Int)
+                                  
+                                self.weightValue.text = String(self.currentPatient.weight)
+                                self.ageValue.text = String(self.currentPatient.age)
+                                self.nameLabel.text = self.currentPatient.name
+                                self.patientakteItems = [ListElemen( title: "Blood Group", value: self.currentPatient.bloodgroup, image: #imageLiteral(resourceName: "blood.jpg")),
+                                ListElemen( title: "Size", value: String(self.currentPatient.size), image: #imageLiteral(resourceName: "size")),
+                                ListElemen( title: "Smoker", value: self.currentPatient.smoker, image: #imageLiteral(resourceName: "smoke")),
+                                ListElemen( title: "Vaccine", value: self.currentPatient.vaccine, image: #imageLiteral(resourceName: "vaccin")),
+                                ListElemen( title: "Recently Contracted Disease", value: self.currentPatient.diseases , image: #imageLiteral(resourceName: "disease.jpg")),
+                                ListElemen( title: "Allergies", value: self.currentPatient.allergies, image: #imageLiteral(resourceName: "allergy")),
+                                ListElemen( title: "Athletic", value: self.currentPatient.athletic, image: #imageLiteral(resourceName: "sport")),
+                                ListElemen( title: "Job", value: self.currentPatient.job, image: #imageLiteral(resourceName: "job")),
+                                ListElemen( title: "Ethnies", value: self.currentPatient.ethnies, image: #imageLiteral(resourceName: "ethnie")),
+                                ListElemen( title: "Vegetarian", value:self.currentPatient.vegetarian, image: #imageLiteral(resourceName: "vegetariean")),
+                                ListElemen( title: "Gender", value:self.currentPatient.gender, image: #imageLiteral(resourceName: "gender")),
+                                ListElemen( title: "Diabetes", value:self.currentPatient.diabetic, image: #imageLiteral(resourceName: "diabetes"))
+                                ]
+                                
+                                let otherProperties = self.currentPatient.other
+                                self.otherItems = otherProperties
+                                for element in otherProperties
+                                {
+                                    self.patientakteItems.append(ListElemen( title: element["label"]!, value: element["value"]!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection")))
+                                }
+                                self.tableView.reloadData()
+                                self.containerView.reloadInputViews()
+     
+                            }
+                        }
+                       
+                    }
+                }
+           }
     }
 
     extension InformationViewController : UITableViewDelegate,UITableViewDataSource
     {
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+        {
             return patientakteItems.count
         }
         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+        {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
             let listitem = patientakteItems[indexPath.row]
-            guard let item = cell as? ListElement else{
+            guard let item = cell as? ListElement else
+            {
                 return cell
             }
             
@@ -288,17 +295,19 @@ class InformationViewController: UIViewController {
         
         
     }
-    extension UIColor {
-        static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+    extension UIColor
+    {
+        static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor
+        {
             return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
         }
         
         static let mainBlue = UIColor.rgb(red: 0, green: 150, blue: 255)
     }
 
-    extension UIView {
-        
-        
+    extension UIView
+    {
+       
         func anchor(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, paddingTop: CGFloat? = 0,
                     paddingLeft: CGFloat? = 0, paddingBottom: CGFloat? = 0, paddingRight: CGFloat? = 0, width: CGFloat? = nil, height: CGFloat? = nil) {
             

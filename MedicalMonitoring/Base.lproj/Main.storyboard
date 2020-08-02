@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="35V-5a-08d">
-                                <rect key="frame" x="40" y="128" width="334" height="326"/>
+                                <rect key="frame" x="40" y="128" width="334" height="318"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmg-PE-Cu1">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="206"/>
@@ -28,9 +28,9 @@
                                             <segue destination="efu-zb-gas" kind="show" id="UAZ-kj-oNe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-tM-bR3">
-                                        <rect key="frame" x="0.0" y="296" width="334" height="30"/>
-                                        <state key="normal" title="Sign in"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-tM-bR3">
+                                        <rect key="frame" x="0.0" y="296" width="334" height="22"/>
+                                        <state key="normal" title="Sign in" image="square.and.pencil" catalog="system"/>
                                         <connections>
                                             <segue destination="ckE-5h-tQA" kind="show" id="7FW-lM-S69"/>
                                         </connections>
@@ -244,13 +244,13 @@
             </objects>
             <point key="canvasLocation" x="-47100" y="316"/>
         </scene>
-        <!--Informatio-->
+        <!--Information-->
         <scene sceneID="EXE-2v-PI2">
             <objects>
                 <viewController storyboardIdentifier="infoVC" id="5Cr-2t-ejD" customClass="InformationViewController" customModule="MedicalMonitoring" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Informatio" id="dKk-2a-ciO"/>
+                    <navigationItem key="navigationItem" title="Information" id="dKk-2a-ciO"/>
                     <connections>
-                        <segue destination="cuN-Ae-NjD" kind="show" id="hY1-iF-bAF"/>
+                        <segue destination="cuN-Ae-NjD" kind="show" identifier="backtoInfo" id="hY1-iF-bAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyq-9M-igj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -409,4 +409,7 @@
             <point key="canvasLocation" x="-50581.159420289856" y="178.79464285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+    </resources>
 </document>

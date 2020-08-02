@@ -21,13 +21,13 @@ class patient
     var id: String!
     var job: String!
     var name: String!
-    var other: [[String:String]]
+    var other: [[String:String]] = []
     var size: Int!
     var smoker: String!
     var vaccine: String!
     var vegetarian: String!
     var weight:Int!
-    //hjghjghghghghghghghg
+    
     
     init(age: Int, allergies: String,athletic: String, bloodgroup:String, diabetic:String, diseases:String, ethnies:String, gender:String, job:String,name:String,
          other:[[String:String]], size:Int, smoker:String, vaccine:String, vegetarian:String, weight:Int) {

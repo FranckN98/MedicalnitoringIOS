@@ -10,7 +10,8 @@
 
 import UIKit
 
-class ListElement : UITableViewCell {
+class ListElement : UITableViewCell
+{
     
     // MARK: - Init
     var safeArea: UILayoutGuide!
