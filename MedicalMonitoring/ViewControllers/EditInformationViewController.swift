@@ -14,7 +14,7 @@ class EditInformationViewController: UIViewController
     
     var tableView = UITableView()
     var patientakteItems = [ListElemen]()
-    var currentPatient : patient!
+    var currentPatient : patient! = patient()
     var otherItems : [[String:String]] = []
     var patientKey : String!
     var ref: DatabaseReference! = Database.database().reference()
@@ -113,7 +113,7 @@ class EditInformationViewController: UIViewController
     }
     func functionUpdatePatientInfos(patient:patient)
     {
-        let p = ["age":0,"allergies":"" ,"athletic":"", "bloodgroup":"","diabetic":"", "diseases":"","ethnies":"","gender":"", "id":"", "job":"", "name":"", "other":[], "size":0, "smoker":"", "vaccine":"", "vegetarian":"", "weight":0] as [String : Any]
+        let p = ["age":patient.age,"allergies":patient.allergies ,"athletic":patient.athletic, "bloodgroup":patient.bloodgroup,"diabetic":patient.diabetic, "diseases":patient.diseases,"ethnies":patient.ethnies,"gender":patient.gender, "id":patient.id, "job":patient.job, "name":patient.name, "other":patient.other, "size":patient.size, "smoker":patient.smoker, "vaccine":patient.vaccine, "vegetarian":patient.vegetarian, "weight":patient.weight] as [String : Any]
         
         ref.child("PatientInformation/\(patientKey!)").setValue(p as NSDictionary)
     }

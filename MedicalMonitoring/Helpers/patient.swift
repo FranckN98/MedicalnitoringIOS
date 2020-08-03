@@ -50,5 +50,24 @@ class patient
         self.weight = weight
     }
     
+    init() {
+        self.age = 0
+        self.allergies =  ""
+        self.athletic =  ""
+        self.bloodgroup = ""
+        self.diabetic = ""
+        self.diseases = ""
+        self.ethnies = ""
+        self.gender = ""
+        self.job = ""
+        self.name = ""
+        self.other = []
+        self.size = 0
+        self.smoker = ""
+        self.vaccine = ""
+        self.vegetarian = ""
+        self.weight = 0
+    }
+    
     
 }

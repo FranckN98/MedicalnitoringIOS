@@ -45,7 +45,7 @@ class InformationViewController: UIViewController
         ListElemen( title: "Gender", value: "", image: #imageLiteral(resourceName: "gender")),
         ListElemen( title: "Diabetes", value: "", image: #imageLiteral(resourceName: "diabetes"))
         ]
-        var currentPatient : patient!
+        var currentPatient : patient! = patient()
         var patientKey : String!
         var otherItems : [[String:String]] = []
         lazy var containerView: UIView = {
@@ -235,7 +235,9 @@ class InformationViewController: UIViewController
                         self.currentPatient = patient(age: dico["age"] as! Int, allergies: dico["allergies"] as! String,
                           athletic: dico["athletic"] as! String, bloodgroup: dico["bloodgroup"] as! String, diabetic: dico["diabetic"] as! String,
                           diseases: dico["diseases"] as! String, ethnies: dico["ethnies"] as! String, gender: dico["gender"] as! String, job: dico["job"] as! String,
-                          name: dico["name"] as! String, other: dico["other"] as! [[String:String]], size: dico["size"] as! Int, smoker: dico["smoker"] as! String,
+                          name: dico["name"] as! String,
+                          other: dico["other"] as! [[String:String]],
+                          size: dico["size"] as? Int ?? 0, smoker: dico["smoker"] as! String,
                           vaccine: dico["vaccine"] as! String, vegetarian: dico["vegetarian"] as! String, weight: dico["weight"] as! Int)
                                   
                                 self.weightValue.text = String(self.currentPatient.weight)
@@ -254,9 +256,9 @@ class InformationViewController: UIViewController
                                 ListElemen( title: "Gender", value:self.currentPatient.gender, image: #imageLiteral(resourceName: "gender")),
                                 ListElemen( title: "Diabetes", value:self.currentPatient.diabetic, image: #imageLiteral(resourceName: "diabetes"))
                                 ]
-                                var patientact : [String: AnyObject] = dico
-                                patientact["other"] = self.currentPatient.other
-                                print(patientact)
+                               //var patientact : [String: AnyObject] = dico
+                              //  patientact["other"] = self.currentPatient.other
+                              //  print(patientact)
                                 let otherProperties = self.currentPatient.other
                                 self.otherItems = otherProperties
                                 for element in otherProperties

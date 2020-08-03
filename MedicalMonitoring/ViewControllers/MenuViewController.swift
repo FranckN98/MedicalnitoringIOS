@@ -18,8 +18,18 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var observButton: UIButton!
     @IBOutlet weak var testButton: UIButton!
-  
-    
+    @IBOutlet weak var logOutButton: UIButton!
+    // Log out Method
+    @IBAction func logOutTapped(_ sender: Any)
+    {
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        }
+        catch{
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         infoButton.layer.cornerRadius = 25
@@ -35,16 +45,6 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //@IBOutlet weak var collectionView: UICollectionView!
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
