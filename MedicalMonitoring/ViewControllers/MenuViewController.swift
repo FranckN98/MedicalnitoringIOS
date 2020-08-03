@@ -30,7 +30,7 @@ class MenuViewController: UIViewController {
         testButton.layer.cornerRadius = 25
         userId = Auth.auth().currentUser?.uid
         Constants.userid = userId
-        print(Constants.userid!)
+      //  print(Constants.userid!)
         
         // Do any additional setup after loading the view.
     }

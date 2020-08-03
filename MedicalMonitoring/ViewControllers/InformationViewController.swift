@@ -229,6 +229,8 @@ class InformationViewController: UIViewController
                 {
                     if id == Constants.userid
                     {
+                       
+                        print(dico)
                         self.patientKey = snapshot.key
                         self.currentPatient = patient(age: dico["age"] as! Int, allergies: dico["allergies"] as! String,
                           athletic: dico["athletic"] as! String, bloodgroup: dico["bloodgroup"] as! String, diabetic: dico["diabetic"] as! String,
@@ -252,7 +254,9 @@ class InformationViewController: UIViewController
                                 ListElemen( title: "Gender", value:self.currentPatient.gender, image: #imageLiteral(resourceName: "gender")),
                                 ListElemen( title: "Diabetes", value:self.currentPatient.diabetic, image: #imageLiteral(resourceName: "diabetes"))
                                 ]
-                                
+                                var patientact : [String: AnyObject] = dico
+                                patientact["other"] = self.currentPatient.other
+                                print(patientact)
                                 let otherProperties = self.currentPatient.other
                                 self.otherItems = otherProperties
                                 for element in otherProperties

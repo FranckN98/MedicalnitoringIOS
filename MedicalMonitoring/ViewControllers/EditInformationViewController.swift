@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class EditInformationViewController: UIViewController
 {
@@ -16,7 +17,7 @@ class EditInformationViewController: UIViewController
     var currentPatient : patient!
     var otherItems : [[String:String]] = []
     var patientKey : String!
-
+    var ref: DatabaseReference! = Database.database().reference()
     let btn1 = UIButton(type: .custom)
     let btn2 = UIButton(type: .custom)
     
@@ -104,6 +105,7 @@ class EditInformationViewController: UIViewController
             self.otherItems.append(["label":alert.textFields![0].text!, "value":alert.textFields![1].text!])
             self.currentPatient.other = self.otherItems
             self.patientakteItems.append(ListElemen( title: alert.textFields![0].text!, value: alert.textFields![1].text!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection")))
+            self.functionUpdatePatientInfos(patient: self.currentPatient)
             self.tableView.reloadData()
         }
        }))
@@ -111,7 +113,9 @@ class EditInformationViewController: UIViewController
     }
     func functionUpdatePatientInfos(patient:patient)
     {
-        // Save on firabase database
+        let p = ["age":0,"allergies":"" ,"athletic":"", "bloodgroup":"","diabetic":"", "diseases":"","ethnies":"","gender":"", "id":"", "job":"", "name":"", "other":[], "size":0, "smoker":"", "vaccine":"", "vegetarian":"", "weight":0] as [String : Any]
+        
+        ref.child("PatientInformation/\(patientKey!)").setValue(p as NSDictionary)
     }
    
     func configureTableView()
