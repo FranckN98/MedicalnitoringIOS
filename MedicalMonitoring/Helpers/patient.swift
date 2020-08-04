@@ -22,15 +22,15 @@ class patient
     var job: String!
     var name: String!
     var other: [[String:String]] = []
-    var size: Int!
+    var size: String!
     var smoker: String!
     var vaccine: String!
     var vegetarian: String!
-    var weight:Int!
+    var weight:Double!
     
     
     init(age: Int, allergies: String,athletic: String, bloodgroup:String, diabetic:String, diseases:String, ethnies:String, gender:String, job:String,name:String,
-         other:[[String:String]], size:Int, smoker:String, vaccine:String, vegetarian:String, weight:Int) {
+         other:[[String:String]], size:String, smoker:String, vaccine:String, vegetarian:String, weight:Double) {
         
         self.age = age
         self.allergies = allergies
@@ -49,7 +49,6 @@ class patient
         self.vegetarian = vegetarian
         self.weight = weight
     }
-    
     init() {
         self.age = 0
         self.allergies =  ""
@@ -62,12 +61,11 @@ class patient
         self.job = ""
         self.name = ""
         self.other = []
-        self.size = 0
+        self.size = ""
         self.smoker = ""
         self.vaccine = ""
         self.vegetarian = ""
         self.weight = 0
     }
-    
     
 }

@@ -87,7 +87,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="login:" destination="ckE-5h-tQA" eventType="touchUpInside" id="Lce-Il-sGM"/>
-                                            <segue destination="7jl-W2-dir" kind="show" id="Hvd-dU-fN4"/>
+                                            <segue destination="7jl-W2-dir" kind="show" identifier="toMenu" id="Hvd-dU-fN4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRd-Cm-nVW">
@@ -235,8 +235,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="rxE-rA-vQv">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="gnN-hX-seF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d46-0c-72r">
-                                <rect key="frame" x="308" y="11" width="86" height="22"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d46-0c-72r" userLabel="Log Out">
+                                <rect key="frame" x="300" y="11" width="94" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="  Log Out" image="power" catalog="system">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -18,12 +18,14 @@ class ListElemen
     var title: String
     var value: String
     var image: UIImage
+    var isAddedValue: Bool
     
-    init( title:String, value:String , image:UIImage)
+    init( title:String, value:String , image:UIImage, isAddedValue:Bool)
     {
         self.image = image
         self.title = title
         self.value = value
+        self.isAddedValue = isAddedValue
     }
 }
 
@@ -32,20 +34,20 @@ class InformationViewController: UIViewController
       // MARK: - Properties
         
         var tableView = UITableView()
-        var patientakteItems = [ListElemen( title: "Blood Group", value: "", image: #imageLiteral(resourceName: "blood.jpg")),
-        ListElemen( title: "Size", value: "", image: #imageLiteral(resourceName: "size")),
-        ListElemen( title: "Smoker", value: "", image: #imageLiteral(resourceName: "smoke")),
-        ListElemen( title: "Vaccine", value: "", image: #imageLiteral(resourceName: "vaccin")),
-        ListElemen( title: "Recently Contracted Disease", value: "", image: #imageLiteral(resourceName: "disease.jpg")),
-        ListElemen( title: "Allergies", value: "", image: #imageLiteral(resourceName: "allergy")),
-        ListElemen( title: "Athletic", value: "", image: #imageLiteral(resourceName: "sport")),
-        ListElemen( title: "Job", value: "", image: #imageLiteral(resourceName: "job")),
-        ListElemen( title: "Ethnies", value: "", image: #imageLiteral(resourceName: "ethnie")),
-        ListElemen( title: "Vegetarian", value: "", image: #imageLiteral(resourceName: "vegetariean")),
-        ListElemen( title: "Gender", value: "", image: #imageLiteral(resourceName: "gender")),
-        ListElemen( title: "Diabetes", value: "", image: #imageLiteral(resourceName: "diabetes"))
+        var patientakteItems = [ListElemen( title: "Blood Group", value: "", image: #imageLiteral(resourceName: "blood.jpg"),isAddedValue:false),
+                                ListElemen( title: "Size", value: "", image: #imageLiteral(resourceName: "size"),isAddedValue:false),
+                                ListElemen( title: "Smoker", value: "", image: #imageLiteral(resourceName: "smoke"),isAddedValue:false),
+                                ListElemen( title: "Vaccine", value: "", image: #imageLiteral(resourceName: "vaccin"),isAddedValue:false),
+                                ListElemen( title: "Diseases", value: "", image: #imageLiteral(resourceName: "disease.jpg"),isAddedValue:false),
+                                ListElemen( title: "Allergies", value: "", image: #imageLiteral(resourceName: "allergy"),isAddedValue:false),
+                                ListElemen( title: "Athletic", value: "", image: #imageLiteral(resourceName: "sport"),isAddedValue:false),
+                                ListElemen( title: "Job", value: "", image: #imageLiteral(resourceName: "job"),isAddedValue:false),
+                                ListElemen( title: "Ethnies", value: "", image: #imageLiteral(resourceName: "ethnie"),isAddedValue:false),
+                                ListElemen( title: "Vegetarian", value: "", image: #imageLiteral(resourceName: "vegetariean"),isAddedValue:false),
+                                ListElemen( title: "Gender", value: "", image: #imageLiteral(resourceName: "gender"),isAddedValue:false),
+                                ListElemen( title: "Diabetes", value: "", image: #imageLiteral(resourceName: "diabetes"),isAddedValue:false)
         ]
-        var currentPatient : patient! = patient()
+        var currentPatient : patient!
         var patientKey : String!
         var otherItems : [[String:String]] = []
         lazy var containerView: UIView = {
@@ -176,7 +178,9 @@ class InformationViewController: UIViewController
                 editinfoVC.currentPatient = self.currentPatient
                 editinfoVC.otherItems = self.otherItems
                 editinfoVC.patientKey = self.patientKey
-                editinfoVC.patientakteItems.insert(ListElemen( title: "Weight", value: weightValue.text!, image: #imageLiteral(resourceName: "how-to-lose-weight-hub-image-scales.jpg")), at: 0)
+                editinfoVC.patientakteItems.insert(ListElemen( title: "Weight", value: weightValue.text!, image: #imageLiteral(resourceName: "how-to-lose-weight-hub-image-scales.jpg"),isAddedValue:false), at: 0)
+                editinfoVC.patientakteItems.insert(ListElemen( title: "age", value: ageValue.text!, image: #imageLiteral(resourceName: "age"),isAddedValue:false), at: 0)
+                editinfoVC.patientakteItems.insert(ListElemen( title: "Name", value: nameLabel.text!, image: #imageLiteral(resourceName: "name"),isAddedValue:false), at: 0)
             }
         }
     // MARK: Items initialisation
@@ -225,48 +229,85 @@ class InformationViewController: UIViewController
                        
             if let dico = snapshot.value as? [String:AnyObject]
             {
+                
                 if let id = dico["id"] as? String
                 {
-                    if id == Constants.userid
+                    if id == Auth.auth().currentUser?.uid
                     {
                        
                         print(dico)
                         self.patientKey = snapshot.key
-                        self.currentPatient = patient(age: dico["age"] as! Int, allergies: dico["allergies"] as! String,
-                          athletic: dico["athletic"] as! String, bloodgroup: dico["bloodgroup"] as! String, diabetic: dico["diabetic"] as! String,
-                          diseases: dico["diseases"] as! String, ethnies: dico["ethnies"] as! String, gender: dico["gender"] as! String, job: dico["job"] as! String,
-                          name: dico["name"] as! String,
-                          other: dico["other"] as! [[String:String]],
-                          size: dico["size"] as? Int ?? 0, smoker: dico["smoker"] as! String,
-                          vaccine: dico["vaccine"] as! String, vegetarian: dico["vegetarian"] as! String, weight: dico["weight"] as! Int)
-                                  
-                                self.weightValue.text = String(self.currentPatient.weight)
-                                self.ageValue.text = String(self.currentPatient.age)
+                        self.currentPatient = patient(age: dico["age"] as! Int,
+                                                      allergies: dico["allergies"] as! String,
+                                                      athletic: dico["athletic"] as! String,
+                                                      bloodgroup: dico["bloodgroup"] as! String,
+                                                      diabetic: dico["diabetic"] as! String,
+                                                      diseases: dico["diseases"] as! String,
+                                                      ethnies: dico["ethnies"] as! String,
+                                                      gender: dico["gender"] as! String,
+                                                      job: dico["job"] as! String,
+                                                      name: dico["name"] as! String,
+                                                      other: dico["other"] as! [[String:String]],
+                                                      size: dico["size"] as! String ,
+                                                      smoker: dico["smoker"] as! String,
+                                                      vaccine: dico["vaccine"] as! String,
+                                                      vegetarian: dico["vegetarian"] as! String,
+                                                      weight: dico["weight"] as? Double ?? 0)
+                                
+                                self.weightValue.text = String(self.currentPatient.weight!)
+                                self.ageValue.text = String(self.currentPatient.age!)
                                 self.nameLabel.text = self.currentPatient.name
-                                self.patientakteItems = [ListElemen( title: "Blood Group", value: self.currentPatient.bloodgroup, image: #imageLiteral(resourceName: "blood.jpg")),
-                                ListElemen( title: "Size", value: String(self.currentPatient.size), image: #imageLiteral(resourceName: "size")),
-                                ListElemen( title: "Smoker", value: self.currentPatient.smoker, image: #imageLiteral(resourceName: "smoke")),
-                                ListElemen( title: "Vaccine", value: self.currentPatient.vaccine, image: #imageLiteral(resourceName: "vaccin")),
-                                ListElemen( title: "Recently Contracted Disease", value: self.currentPatient.diseases , image: #imageLiteral(resourceName: "disease.jpg")),
-                                ListElemen( title: "Allergies", value: self.currentPatient.allergies, image: #imageLiteral(resourceName: "allergy")),
-                                ListElemen( title: "Athletic", value: self.currentPatient.athletic, image: #imageLiteral(resourceName: "sport")),
-                                ListElemen( title: "Job", value: self.currentPatient.job, image: #imageLiteral(resourceName: "job")),
-                                ListElemen( title: "Ethnies", value: self.currentPatient.ethnies, image: #imageLiteral(resourceName: "ethnie")),
-                                ListElemen( title: "Vegetarian", value:self.currentPatient.vegetarian, image: #imageLiteral(resourceName: "vegetariean")),
-                                ListElemen( title: "Gender", value:self.currentPatient.gender, image: #imageLiteral(resourceName: "gender")),
-                                ListElemen( title: "Diabetes", value:self.currentPatient.diabetic, image: #imageLiteral(resourceName: "diabetes"))
+                                self.patientakteItems = [ListElemen( title: "Blood Group", value: self.currentPatient.bloodgroup, image: #imageLiteral(resourceName: "blood.jpg"),isAddedValue:false),
+                                ListElemen( title: "Size", value: self.currentPatient.size, image: #imageLiteral(resourceName: "size"),isAddedValue:false),
+                                ListElemen( title: "Smoker", value: self.currentPatient.smoker, image: #imageLiteral(resourceName: "smoke"),isAddedValue:false),
+                                ListElemen( title: "Vaccine", value: self.currentPatient.vaccine, image: #imageLiteral(resourceName: "vaccin"),isAddedValue:false),
+                                ListElemen( title: "Diseases", value: self.currentPatient.diseases , image: #imageLiteral(resourceName: "disease.jpg"),isAddedValue:false),
+                                ListElemen( title: "Allergies", value: self.currentPatient.allergies, image: #imageLiteral(resourceName: "allergy"),isAddedValue:false),
+                                ListElemen( title: "Athletic", value: self.currentPatient.athletic, image: #imageLiteral(resourceName: "sport"),isAddedValue:false),
+                                ListElemen( title: "Job", value: self.currentPatient.job, image: #imageLiteral(resourceName: "job"),isAddedValue:false),
+                                ListElemen( title: "Ethnies", value: self.currentPatient.ethnies, image: #imageLiteral(resourceName: "ethnie"),isAddedValue:false),
+                                ListElemen( title: "Vegetarian", value:self.currentPatient.vegetarian, image: #imageLiteral(resourceName: "vegetariean"),isAddedValue:false),
+                                ListElemen( title: "Gender", value:self.currentPatient.gender, image: #imageLiteral(resourceName: "gender"),isAddedValue:false),
+                                ListElemen( title: "Diabetes", value:self.currentPatient.diabetic, image: #imageLiteral(resourceName: "diabetes"),isAddedValue:false)
                                 ]
-                               //var patientact : [String: AnyObject] = dico
-                              //  patientact["other"] = self.currentPatient.other
-                              //  print(patientact)
+                        
+                                                        
+                                //var patientact : [String: AnyObject] = dico
+                                //patientact["other"] = self.currentPatient.other
+                                //print(patientact)
                                 let otherProperties = self.currentPatient.other
                                 self.otherItems = otherProperties
+                                Constants.addedValue = self.otherItems
+                        
+                        
+                                Constants.patientbeforeEdit = ["age":self.currentPatient.age ?? 0,
+                                "allergies": self.currentPatient.allergies ?? "" ,
+                                "athletic": self.currentPatient.athletic ?? "",
+                                "bloodgroup":self.currentPatient.bloodgroup ?? "",
+                                "diabetic":self.currentPatient.diabetic ?? "",
+                                "diseases":self.currentPatient.diseases ?? "",
+                                "ethnies":self.currentPatient.ethnies ?? "",
+                                "gender":self.currentPatient.gender ?? "",
+                                "id":Auth.auth().currentUser?.uid ?? Constants.userid!,
+                                "job":self.currentPatient.job ?? "",
+                                "name":self.currentPatient.name ?? "",
+                                "other":self.otherItems,
+                                "size":self.currentPatient.size ?? 0,
+                                "smoker":self.currentPatient.smoker ?? "",
+                                "vaccine":self.currentPatient.vaccine ?? "",
+                                "vegetarian":self.currentPatient.vegetarian ?? "",
+                                "weight":self.currentPatient.weight ?? 0] as [String : Any]
+
+                        
                                 for element in otherProperties
                                 {
-                                    self.patientakteItems.append(ListElemen( title: element["label"]!, value: element["value"]!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection")))
+                                    self.patientakteItems.append(ListElemen( title: element["label"]!, value: element["value"]!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection"), isAddedValue:true))
                                 }
                                 self.tableView.reloadData()
                                 self.containerView.reloadInputViews()
+                        
+                        
+                        
      
                             }
                         }

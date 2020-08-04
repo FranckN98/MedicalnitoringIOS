@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class EditInformationViewController: UIViewController
 {
@@ -35,7 +36,6 @@ class EditInformationViewController: UIViewController
         
         btn1.frame = CGRect(x: 325, y: 785, width: 70, height: 70)
         btn1.setImage(UIImage(systemName: "tray.and.arrow.down"), for: .normal)
-       // btn.setTitle("x", for: .normal)
         btn1.backgroundColor = #colorLiteral(red: 0.9098526554, green: 0.9034220025, blue: 0.8536889113, alpha: 1)
         btn1.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         btn1.clipsToBounds = true
@@ -72,7 +72,7 @@ class EditInformationViewController: UIViewController
     }
     @IBAction func button1Tapped(sender:UIButton)
     {
-        let alert = UIAlertController(title: "Warning", message: "Please be sure to check all the fields on the page before updating the Information", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning", message: "Please be sure to check all the fields on the page before updating the Information\nEmpty text fields are not saved", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             
@@ -81,6 +81,7 @@ class EditInformationViewController: UIViewController
         alert.addAction(UIAlertAction(title: "Save", style: .destructive, handler: { (action) in
             
             // TODO: Informationen werden geupdatet
+            self.saveAllFieldsValueOnDatabase()
         }))
         self.present(alert, animated: true)
     }
@@ -103,8 +104,9 @@ class EditInformationViewController: UIViewController
         if(alert.textFields![0].text != "" && alert.textFields![1].text != "")
         {
             self.otherItems.append(["label":alert.textFields![0].text!, "value":alert.textFields![1].text!])
+            Constants.addedValue.append(["label":alert.textFields![0].text!, "value":alert.textFields![1].text!])
             self.currentPatient.other = self.otherItems
-            self.patientakteItems.append(ListElemen( title: alert.textFields![0].text!, value: alert.textFields![1].text!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection")))
+            self.patientakteItems.append(ListElemen( title: alert.textFields![0].text!, value: alert.textFields![1].text!, image: #imageLiteral(resourceName: "Evolution-of-Patient-Centricity-in-Clinical-Trials-and-Data-Collection"),isAddedValue:true))
             self.functionUpdatePatientInfos(patient: self.currentPatient)
             self.tableView.reloadData()
         }
@@ -113,7 +115,23 @@ class EditInformationViewController: UIViewController
     }
     func functionUpdatePatientInfos(patient:patient)
     {
-        let p = ["age":patient.age,"allergies":patient.allergies ,"athletic":patient.athletic, "bloodgroup":patient.bloodgroup,"diabetic":patient.diabetic, "diseases":patient.diseases,"ethnies":patient.ethnies,"gender":patient.gender, "id":patient.id, "job":patient.job, "name":patient.name, "other":patient.other, "size":patient.size, "smoker":patient.smoker, "vaccine":patient.vaccine, "vegetarian":patient.vegetarian, "weight":patient.weight] as [String : Any]
+        let p = ["age":patient.age ?? 0,
+                 "allergies": patient.allergies ?? "" ,
+                 "athletic": patient.athletic ?? "",
+                 "bloodgroup":patient.bloodgroup ?? "",
+                 "diabetic":patient.diabetic ?? "",
+                 "diseases":patient.diseases ?? "",
+                 "ethnies":patient.ethnies ?? "",
+                 "gender":patient.gender ?? "",
+                 "id":Auth.auth().currentUser?.uid ?? Constants.userid!,
+                 "job":patient.job ?? "",
+                 "name":patient.name ?? "",
+                 "other":otherItems,
+                 "size":patient.size ?? 0,
+                 "smoker":patient.smoker ?? "",
+                 "vaccine":patient.vaccine ?? "",
+                 "vegetarian":patient.vegetarian ?? "",
+                 "weight":patient.weight ?? 0] as [String : Any]
         
         ref.child("PatientInformation/\(patientKey!)").setValue(p as NSDictionary)
     }
@@ -131,6 +149,11 @@ class EditInformationViewController: UIViewController
          tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
          tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+    func saveAllFieldsValueOnDatabase()
+    {
+        ref.child("PatientInformation/\(patientKey!)").setValue(Constants.patientbeforeEdit)
+    }
+    
  
 
 }
@@ -151,11 +174,13 @@ extension EditInformationViewController : UITableViewDelegate,UITableViewDataSou
            }
            item.activateEditModus()
            item.title.text = listitem.title
+           //configure textfield
+           item.isAddedValue = listitem.isAddedValue
            item.editvalue.text = listitem.value
            item.imageIV.image = listitem.image
            
            return cell
        }
        
-       
+    
 }
