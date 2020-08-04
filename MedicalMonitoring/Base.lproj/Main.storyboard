@@ -175,7 +175,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="cgW-jD-edx" kind="show" identifier="toHistory" id="drC-du-akQ"/>
+                                                    <segue destination="ZQP-26-Hwq" kind="show" id="Q8h-yZ-lKG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1X-0b-ZKD">
@@ -257,6 +257,22 @@
             </objects>
             <point key="canvasLocation" x="-47100" y="316"/>
         </scene>
+        <!--History-->
+        <scene sceneID="70R-p3-e2t">
+            <objects>
+                <viewController id="ZQP-26-Hwq" customClass="HistoryViewController" customModule="MedicalMonitoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BUu-iF-WjY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ir9-IH-nLv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" id="f3T-t0-2RS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWy-Nb-Acv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-45805" y="1049"/>
+        </scene>
         <!--Information-->
         <scene sceneID="EXE-2v-PI2">
             <objects>
@@ -269,16 +285,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyq-9M-igj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45749" y="-439"/>
-        </scene>
-        <!--History-->
-        <scene sceneID="RO6-y1-BsC">
-            <objects>
-                <viewController id="cgW-jD-edx" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="History" largeTitleDisplayMode="always" id="ckd-Ug-6SY"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="29I-WD-Gyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-45672" y="1250"/>
         </scene>
         <!--Consultation-->
         <scene sceneID="S02-Rp-OVN">
