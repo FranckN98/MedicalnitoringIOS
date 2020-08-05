@@ -150,7 +150,7 @@ class InformationViewController: UIViewController
             let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: 325, y: 785, width: 70, height: 70)
             btn.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
-            btn.backgroundColor = #colorLiteral(red: 0.8711801023, green: 0.9414077123, blue: 0.957699158, alpha: 1)
+            btn.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
             btn.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             btn.clipsToBounds = true
             btn.titleLabel?.font = .systemFont(ofSize: 40)
