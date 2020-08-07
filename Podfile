@@ -20,7 +20,8 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Database'
 pod 'FSCalendar'
-
+pod "FlexibleSteppedProgressBar"
+pod 'DLRadioButton'
 
 
 end

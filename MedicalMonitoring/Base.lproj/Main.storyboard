@@ -286,21 +286,471 @@
             </objects>
             <point key="canvasLocation" x="-45749" y="-439"/>
         </scene>
-        <!--Consultation-->
-        <scene sceneID="S02-Rp-OVN">
+        <!--View Controller-->
+        <scene sceneID="Iu8-RN-r25">
             <objects>
-                <viewController id="sbV-b5-Wf8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="USE-Ui-hxS">
+                <viewController id="O95-w0-i0W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9nE-xP-V78">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Fyp-gk-maA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Idz-bf-aj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44626.086956521744" y="220.3125"/>
+        </scene>
+        <!--Consultation-->
+        <scene sceneID="S02-Rp-OVN">
+            <objects>
+                <viewController id="sbV-b5-Wf8" customClass="ConsultViewController" customModule="MedicalMonitoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USE-Ui-hxS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdA-AK-Zxq">
+                                <rect key="frame" x="30" y="782" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CVo-WZ-03s"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="EWP-33-odw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dcG-hn-mif"/>
+                                    <constraint firstAttribute="width" constant="50" id="lQU-pu-Uf8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" image="chevron.left.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="prevButtonTapped:" destination="sbV-b5-Wf8" eventType="touchUpInside" id="XuL-l5-vdI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="544-oU-LLO">
+                                <rect key="frame" x="334" y="782" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="GcE-rz-Nee"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="XNF-AO-2zH"/>
+                                    <constraint firstAttribute="height" constant="50" id="uEl-E6-ugh"/>
+                                    <constraint firstAttribute="width" constant="50" id="ykn-uy-I9j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" image="chevron.right.circle" catalog="system">
+                                    <color key="titleShadowColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="sbV-b5-Wf8" eventType="touchUpInside" id="mrI-5v-whs"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-Yn-yhY">
+                                <rect key="frame" x="15" y="359" width="384" height="178"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To finish search your doctor and confirm to send him your automatic consultation " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXd-7X-H5i">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="gq2-XL-eXE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fak-Ay-jqg">
+                                        <rect key="frame" x="0.0" y="100" width="384" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssK-g3-LQi">
+                                        <rect key="frame" x="0.0" y="156" width="384" height="22"/>
+                                        <state key="normal" title="Send" image="envelope" catalog="system">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="LKv-wI-L88">
+                                <rect key="frame" x="15" y="248" width="384" height="469"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fRs-Bd-xux">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are symptom relief situation?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf3-e8-JNX">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indicate all the situation" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HyA-ak-ueQ">
+                                                <rect key="frame" x="0.0" y="20.5" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WPR-8K-mTu">
+                                        <rect key="frame" x="0.0" y="104.5" width="384" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your nutrition made of?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpz-dN-0Xk">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="indicate foods" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPk-8L-Ibc">
+                                                <rect key="frame" x="0.0" y="20.5" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-BL-0ae">
+                                        <rect key="frame" x="0.0" y="209" width="384" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you currently taking any medication?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-yK-4zu">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="indicate the medication" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PuI-UN-FR8">
+                                                <rect key="frame" x="0.0" y="20.5" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ow9-N2-m62">
+                                        <rect key="frame" x="0.0" y="313.5" width="384" height="53.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there any medications that you cannot stand?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXX-Hk-4xn">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="indicate the medication" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0As-s1-51z">
+                                                <rect key="frame" x="0.0" y="19.5" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="isP-fE-jF8">
+                                        <rect key="frame" x="0.0" y="417" width="384" height="52"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of treatment do you find difficult to follow?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-Bk-5dp">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="indicate the frequency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hP6-Lq-bTx">
+                                                <rect key="frame" x="0.0" y="18" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Bk-cQB">
+                                <rect key="frame" x="60" y="248" width="253.5" height="488"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-z8-4Nd">
+                                        <rect key="frame" x="0.0" y="0.0" width="253.5" height="129.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RDZ-ru-j9s">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="129.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fatigue" translatesAutoresizingMaskIntoConstraints="NO" id="LQ7-8M-zQb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="119"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="119" id="CXl-5d-Bsh"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rf-i8-wLm" customClass="DLRadioButton">
+                                                        <rect key="frame" x="17" y="124" width="68" height="5.5"/>
+                                                        <state key="normal" title="Tiredness"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hand.thumbsup.fill" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rEy-pZ-9DJ">
+                                                <rect key="frame" x="151.5" y="0.0" width="102" height="129.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="vertige" translatesAutoresizingMaskIntoConstraints="NO" id="WLk-6n-RKK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="94.5"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-Sg-u2p" customClass="DLRadioButton">
+                                                        <rect key="frame" x="18" y="99.5" width="66" height="30"/>
+                                                        <state key="normal" title="Dizziness"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hand.thumbsup.fill" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rEy-pZ-9DJ" firstAttribute="height" secondItem="RDZ-ru-j9s" secondAttribute="height" id="5hI-gZ-cpP"/>
+                                            <constraint firstItem="rEy-pZ-9DJ" firstAttribute="width" secondItem="RDZ-ru-j9s" secondAttribute="width" id="kCl-wt-PpI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="tP1-Ou-Bo3">
+                                        <rect key="frame" x="0.0" y="179.5" width="253.5" height="129"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vNN-XK-OHw">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="129"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="rhume" translatesAutoresizingMaskIntoConstraints="NO" id="DeI-ZT-9wi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="94"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDt-65-M9V" customClass="DLRadioButton">
+                                                        <rect key="frame" x="35" y="99" width="32" height="30"/>
+                                                        <state key="normal" title="Cold"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hand.thumbsup.fill" catalog="system"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BQ1-Ar-fjN">
+                                                <rect key="frame" x="151.5" y="0.0" width="102" height="129"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="vomissement" translatesAutoresizingMaskIntoConstraints="NO" id="9eA-Ka-5TQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hin-gL-HZ2" customClass="DLRadioButton">
+                                                        <rect key="frame" x="18" y="99" width="66" height="30"/>
+                                                        <state key="normal" title="Vomitting"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
+                                                                <real key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hand.thumbsup.fill" catalog="system"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="39F-ca-c6l">
+                                        <rect key="frame" x="0.0" y="358.5" width="253.5" height="129.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UTV-Lb-bDa">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="129.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="insomnie" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-DL-Kxg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="94.5"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-uL-LQh" customClass="DLRadioButton">
+                                                        <rect key="frame" x="20" y="99.5" width="62" height="30"/>
+                                                        <state key="normal" title="Insomnia"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hand.thumbsup.fill" catalog="system"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MGA-1K-tdh">
+                                                <rect key="frame" x="151.5" y="0.0" width="102" height="129.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="toux" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-mm-mr0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="99.5"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXn-f3-CbG" customClass="DLRadioButton">
+                                                        <rect key="frame" x="28" y="99.5" width="46" height="30"/>
+                                                        <state key="normal" title="Cough"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hand.thumbsup.fill" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vNN-XK-OHw" firstAttribute="height" secondItem="RDZ-ru-j9s" secondAttribute="height" id="04b-R2-bW0"/>
+                                    <constraint firstItem="vNN-XK-OHw" firstAttribute="width" secondItem="RDZ-ru-j9s" secondAttribute="width" id="DwZ-jU-8mv"/>
+                                    <constraint firstItem="BQ1-Ar-fjN" firstAttribute="width" secondItem="RDZ-ru-j9s" secondAttribute="width" id="Ehh-2f-CIq"/>
+                                    <constraint firstItem="39F-ca-c6l" firstAttribute="height" secondItem="o6p-z8-4Nd" secondAttribute="height" id="FUD-EU-v1u"/>
+                                    <constraint firstItem="o6p-z8-4Nd" firstAttribute="top" secondItem="u8r-Bk-cQB" secondAttribute="top" id="IOD-VV-JL2"/>
+                                    <constraint firstItem="tP1-Ou-Bo3" firstAttribute="height" secondItem="o6p-z8-4Nd" secondAttribute="height" id="LPm-US-TRu"/>
+                                    <constraint firstItem="UTV-Lb-bDa" firstAttribute="height" secondItem="RDZ-ru-j9s" secondAttribute="height" id="TGI-gY-lt8"/>
+                                    <constraint firstItem="39F-ca-c6l" firstAttribute="top" secondItem="tP1-Ou-Bo3" secondAttribute="bottom" constant="50" id="U9X-cA-euv"/>
+                                    <constraint firstItem="tP1-Ou-Bo3" firstAttribute="top" secondItem="o6p-z8-4Nd" secondAttribute="bottom" constant="50" id="U9u-Wi-KNc"/>
+                                    <constraint firstItem="MGA-1K-tdh" firstAttribute="height" secondItem="RDZ-ru-j9s" secondAttribute="height" id="Umm-gB-4GS"/>
+                                    <constraint firstItem="tP1-Ou-Bo3" firstAttribute="width" secondItem="o6p-z8-4Nd" secondAttribute="width" id="aGT-wp-aFl"/>
+                                    <constraint firstItem="MGA-1K-tdh" firstAttribute="width" secondItem="RDZ-ru-j9s" secondAttribute="width" id="lCK-sT-HTp"/>
+                                    <constraint firstItem="BQ1-Ar-fjN" firstAttribute="height" secondItem="RDZ-ru-j9s" secondAttribute="height" id="su9-b0-eJI"/>
+                                    <constraint firstItem="39F-ca-c6l" firstAttribute="width" secondItem="o6p-z8-4Nd" secondAttribute="width" id="ugY-u1-tKv"/>
+                                    <constraint firstItem="UTV-Lb-bDa" firstAttribute="width" secondItem="RDZ-ru-j9s" secondAttribute="width" id="xQq-Tf-RtX"/>
+                                    <constraint firstAttribute="width" secondItem="u8r-Bk-cQB" secondAttribute="height" multiplier="1147:2209" id="yge-oc-oYq"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="XlG-di-Zee">
+                                <rect key="frame" x="30" y="238" width="354" height="494"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-8g-QCo">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where have hurt?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-et-exN">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indicate Body Part" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bD-NJ-h0C">
+                                                <rect key="frame" x="0.0" y="20.5" width="354" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JeH-cX-C7s">
+                                        <rect key="frame" x="0.0" y="104.5" width="354" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long has it lasted?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKp-yY-1RO">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="indicate the number of days" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCp-xg-oDQ">
+                                                <rect key="frame" x="0.0" y="20.5" width="354" height="34"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Name of your doctor">
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YoQ-nK-oLq">
+                                        <rect key="frame" x="0.0" y="209" width="354" height="84"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you feel this pain frequently?" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm7-Gh-RRk">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="rE8-xj-q6Y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="indicate the frequency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLx-BR-GoC">
+                                                <rect key="frame" x="0.0" y="50" width="354" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zjo-Te-mPH">
+                                        <rect key="frame" x="0.0" y="343" width="354" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much pain do you feel?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fY-f5-Njq">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hhg-xi-Q9T">
+                                                <rect key="frame" x="-2" y="20.5" width="358" height="31"/>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4cX-eF-bL4">
+                                        <rect key="frame" x="0.0" y="443.5" width="354" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your feer level?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqT-mZ-VGY">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="69Z-W7-5CF">
+                                                <rect key="frame" x="-2" y="20.5" width="358" height="31"/>
+                                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="u8r-Bk-cQB" secondAttribute="trailing" constant="60" id="0fZ-lf-eIC"/>
+                            <constraint firstItem="u8r-Bk-cQB" firstAttribute="leading" secondItem="Oji-TN-1MP" secondAttribute="leading" constant="60" id="68Y-mj-vdI"/>
+                            <constraint firstItem="XlG-di-Zee" firstAttribute="top" secondItem="Oji-TN-1MP" secondAttribute="top" constant="150" id="AiM-B4-cvf"/>
+                            <constraint firstItem="u8r-Bk-cQB" firstAttribute="top" secondItem="Oji-TN-1MP" secondAttribute="top" constant="160" id="AuA-be-Fvm"/>
+                            <constraint firstItem="L7x-Yn-yhY" firstAttribute="centerX" secondItem="USE-Ui-hxS" secondAttribute="centerX" id="E4q-gR-lmw"/>
+                            <constraint firstAttribute="trailing" secondItem="u8r-Bk-cQB" secondAttribute="trailing" constant="60" id="HrP-9j-BN5"/>
+                            <constraint firstItem="L7x-Yn-yhY" firstAttribute="leading" secondItem="Oji-TN-1MP" secondAttribute="leading" constant="15" id="Llq-FG-Kcz"/>
+                            <constraint firstItem="u8r-Bk-cQB" firstAttribute="top" secondItem="Oji-TN-1MP" secondAttribute="top" constant="160" id="VDp-4H-dhx"/>
+                            <constraint firstItem="XlG-di-Zee" firstAttribute="leading" secondItem="Oji-TN-1MP" secondAttribute="leading" constant="30" id="Vqm-nR-eAb"/>
+                            <constraint firstItem="L7x-Yn-yhY" firstAttribute="centerY" secondItem="USE-Ui-hxS" secondAttribute="centerY" id="WHJ-tw-TSN"/>
+                            <constraint firstItem="544-oU-LLO" firstAttribute="height" secondItem="EdA-AK-Zxq" secondAttribute="height" id="YeM-Ui-yzZ"/>
+                            <constraint firstItem="Oji-TN-1MP" firstAttribute="trailing" secondItem="LKv-wI-L88" secondAttribute="trailing" constant="15" id="a58-4B-K1D"/>
+                            <constraint firstItem="LKv-wI-L88" firstAttribute="top" secondItem="Oji-TN-1MP" secondAttribute="top" constant="160" id="deb-V7-bXk"/>
+                            <constraint firstItem="EdA-AK-Zxq" firstAttribute="leading" secondItem="Oji-TN-1MP" secondAttribute="leading" constant="30" id="hAD-gJ-lCO"/>
+                            <constraint firstItem="LKv-wI-L88" firstAttribute="leading" secondItem="Oji-TN-1MP" secondAttribute="leading" constant="15" id="hB5-E2-4Os"/>
+                            <constraint firstItem="Oji-TN-1MP" firstAttribute="bottom" secondItem="EdA-AK-Zxq" secondAttribute="bottom" constant="30" id="krP-CX-u3x"/>
+                            <constraint firstItem="544-oU-LLO" firstAttribute="width" secondItem="EdA-AK-Zxq" secondAttribute="width" id="loe-54-btD"/>
+                            <constraint firstAttribute="bottom" secondItem="u8r-Bk-cQB" secondAttribute="bottom" constant="160" id="qdc-q7-BCx"/>
+                            <constraint firstAttribute="trailing" secondItem="XlG-di-Zee" secondAttribute="trailing" constant="30" id="rCb-CZ-JEZ"/>
+                            <constraint firstItem="Oji-TN-1MP" firstAttribute="bottom" secondItem="544-oU-LLO" secondAttribute="bottom" constant="30" id="vX6-o7-In4"/>
+                            <constraint firstAttribute="trailing" secondItem="L7x-Yn-yhY" secondAttribute="trailing" constant="15" id="wsS-bz-xch"/>
+                            <constraint firstItem="u8r-Bk-cQB" firstAttribute="leading" secondItem="Oji-TN-1MP" secondAttribute="leading" constant="60" id="yG5-Vo-LoH"/>
+                            <constraint firstItem="Oji-TN-1MP" firstAttribute="trailing" secondItem="544-oU-LLO" secondAttribute="trailing" constant="30" id="ytD-bg-VSR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Oji-TN-1MP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Consultation" id="DLE-ef-RCf"/>
+                    <connections>
+                        <outlet property="nextButton" destination="544-oU-LLO" id="X4N-kZ-jaG"/>
+                        <outlet property="prevButton" destination="EdA-AK-Zxq" id="YuW-Qp-h4I"/>
+                        <outlet property="view1" destination="XlG-di-Zee" id="YTK-fF-T1F"/>
+                        <outlet property="view2" destination="u8r-Bk-cQB" id="wKf-2r-tNx"/>
+                        <outlet property="view3" destination="LKv-wI-L88" id="oLS-K4-AeN"/>
+                        <outlet property="view4" destination="L7x-Yn-yhY" id="hd7-42-mGF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCM-bx-n5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-43410.144927536232" y="318.75"/>
+            <point key="canvasLocation" x="-43768.115942028991" y="314.73214285714283"/>
         </scene>
         <!--Edit Information-->
         <scene sceneID="j9p-3a-IBw">
@@ -429,6 +879,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.left.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
+        <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="fatigue" width="626" height="580"/>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
+        <image name="hand.thumbsup.fill" catalog="system" width="128" height="124"/>
+        <image name="insomnie" width="568" height="672"/>
         <image name="power" catalog="system" width="128" height="124"/>
+        <image name="rhume" width="525" height="673"/>
+        <image name="toux" width="199" height="253"/>
+        <image name="vertige" width="471" height="416"/>
+        <image name="vomissement" width="200" height="259"/>
     </resources>
 </document>
