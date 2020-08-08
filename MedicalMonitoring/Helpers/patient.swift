@@ -10,7 +10,7 @@ import UIKit
 
 class patient
 {
-    var age : Int!
+    var age : String!
     var allergies : String!
     var athletic : String!
     var bloodgroup: String!
@@ -26,11 +26,11 @@ class patient
     var smoker: String!
     var vaccine: String!
     var vegetarian: String!
-    var weight:Double!
+    var weight:String!
     
     
-    init(age: Int, allergies: String,athletic: String, bloodgroup:String, diabetic:String, diseases:String, ethnies:String, gender:String, job:String,name:String,
-         other:[[String:String]], size:String, smoker:String, vaccine:String, vegetarian:String, weight:Double) {
+    init(age: String, allergies: String,athletic: String, bloodgroup:String, diabetic:String, diseases:String, ethnies:String, gender:String, job:String,name:String,
+         other:[[String:String]], size:String, smoker:String, vaccine:String, vegetarian:String, weight:String) {
         
         self.age = age
         self.allergies = allergies
@@ -50,7 +50,7 @@ class patient
         self.weight = weight
     }
     init() {
-        self.age = 0
+        self.age = ""
         self.allergies =  ""
         self.athletic =  ""
         self.bloodgroup = ""
@@ -65,7 +65,7 @@ class patient
         self.smoker = ""
         self.vaccine = ""
         self.vegetarian = ""
-        self.weight = 0
+        self.weight = ""
     }
     
 }

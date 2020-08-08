@@ -48,7 +48,7 @@ class InformationViewController: UIViewController
                                 ListElemen( title: "Diabetes", value: "", image: #imageLiteral(resourceName: "diabetes"),isAddedValue:false)
         ]
         var currentPatient : patient!
-        var patientKey : String!
+        var patientKey : String! = ""
         var otherItems : [[String:String]] = []
         lazy var containerView: UIView = {
             let view = UIView()
@@ -237,7 +237,7 @@ class InformationViewController: UIViewController
                        
                         print(dico)
                         self.patientKey = snapshot.key
-                        self.currentPatient = patient(age: dico["age"] as! Int,
+                        self.currentPatient = patient(age: dico["age"] as! String,
                                                       allergies: dico["allergies"] as! String,
                                                       athletic: dico["athletic"] as! String,
                                                       bloodgroup: dico["bloodgroup"] as! String,
@@ -247,12 +247,12 @@ class InformationViewController: UIViewController
                                                       gender: dico["gender"] as! String,
                                                       job: dico["job"] as! String,
                                                       name: dico["name"] as! String,
-                                                      other: dico["other"] as! [[String:String]],
+                                                      other: dico["other"] as? [[String:String]] ?? [],
                                                       size: dico["size"] as! String ,
                                                       smoker: dico["smoker"] as! String,
                                                       vaccine: dico["vaccine"] as! String,
                                                       vegetarian: dico["vegetarian"] as! String,
-                                                      weight: dico["weight"] as? Double ?? 0)
+                                                      weight: dico["weight"] as! String )
                                 
                                 self.weightValue.text = String(self.currentPatient.weight!)
                                 self.ageValue.text = String(self.currentPatient.age!)

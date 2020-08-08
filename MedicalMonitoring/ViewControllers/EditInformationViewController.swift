@@ -133,7 +133,14 @@ class EditInformationViewController: UIViewController
                  "vegetarian":patient.vegetarian ?? "",
                  "weight":patient.weight ?? 0] as [String : Any]
         
-        ref.child("PatientInformation/\(patientKey!)").setValue(p as NSDictionary)
+        if(patientKey != "")
+        {
+            ref.child("PatientInformation/\(patientKey!)").setValue(p as NSDictionary)
+        }
+        else
+        {
+            ref.child("PatientInformation").childByAutoId().setValue(p as NSDictionary)
+        }
     }
    
     func configureTableView()
@@ -151,7 +158,15 @@ class EditInformationViewController: UIViewController
     }
     func saveAllFieldsValueOnDatabase()
     {
-        ref.child("PatientInformation/\(patientKey!)").setValue(Constants.patientbeforeEdit)
+        if(patientKey != "")
+        {
+            ref.child("PatientInformation/\(patientKey!)").setValue(Constants.patientbeforeEdit)
+        }
+        else
+        {
+            ref.child("PatientInformation").childByAutoId().setValue(Constants.patientbeforeEdit)
+        }
+         
     }
     
  

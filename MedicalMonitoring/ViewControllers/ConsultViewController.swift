@@ -31,6 +31,10 @@ class ConsultViewController: UIViewController
         super.viewDidLoad()
         nextButton.layer.cornerRadius = 50 / 2
         prevButton.layer.cornerRadius = 50 / 2
+        nextButton.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
+        nextButton.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        prevButton.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
+        prevButton.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         configureProgressbar()
         
     }
