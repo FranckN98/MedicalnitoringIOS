@@ -24,7 +24,9 @@ class MenuViewController: UIViewController {
     {
         do {
             try Auth.auth().signOut()
+            Constants.userid = "" 
             dismiss(animated: true, completion: nil)
+            
         }
         catch{
             

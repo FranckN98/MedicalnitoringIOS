@@ -42,14 +42,21 @@ class LoginViewController: UIViewController {
             }
             else
             {
-                let homeViewController = self.storyboard?.instantiateViewController(identifier:Constants.Storyboard.menuViewController) as? MenuViewController
-                
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                //Constants.userid 
+                self.performSegue(withIdentifier: "backtoInfo", sender: nil)
             }
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "toMenu"
+        {
+            _ = segue.destination as! MenuViewController
+           
+        }
+    }
+    
     
     @IBAction func passwordForgot(_ sender: Any) {
     }

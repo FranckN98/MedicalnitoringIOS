@@ -82,7 +82,7 @@ class RegistrationViewController: UIViewController
                 
                 if err != nil
                 {
-                    self.showError("Error creating 1user")
+                    self.showError("Error creating user")
                 }
                 else
                 {

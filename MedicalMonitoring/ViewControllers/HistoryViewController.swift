@@ -20,7 +20,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
     var datesWithEvents = [String]()
     var listOfVisit = [Visit]()
 
-    var datesWithMultipleEvents = ["2020-10-08", "2020-10-16", "2020-10-20", "2020-10-28"]
+    var datesWithMultipleEvents = ["2020-09-08", "2020-08-06", "2020-10-20", "2020-10-28","2020-08-08", "2020-08-16", "2020-07-20", "2020-08-28"] //test
 
     fileprivate lazy var dateFormatter2: DateFormatter = {
         let formatter = DateFormatter()
@@ -37,7 +37,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         mode.layer.masksToBounds = true
         mode.layer.borderColor = UIColor.white.cgColor
         mode.tintColor = .white
-        mode.addTarget(self, action: #selector(changeCalendarMode), for: .touchUpInside)
+        mode.addTarget(self, action: #selector(changeCalendarMode(sender:)), for: .valueChanged)
         return mode
     }()
     override func viewDidLoad()
@@ -49,21 +49,22 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         configureTableView()
         retrievingInformationFromDatabase()
         floatingButton()
+        
        
     }
     
     //MARK:-Change Calender Mode
     @objc func changeCalendarMode( sender : UISegmentedControl)
     {
-        print("sender.selectedSegmentIndex")
+       
         switch sender.selectedSegmentIndex
         {
             case 0:
-                calendar.scope = .week
+                self.calendar.scope = .week
             case 1:
-                calendar.scope = .month
+                self.calendar.scope = .month
             default:
-                calendar.scope = .month
+                self.calendar.scope = .month
         }
     }
     
@@ -123,6 +124,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
                    }
                    
               }
+                self.tableView.reloadData()
            }
     }
     // MARK: TableView Configuration
@@ -131,14 +133,14 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
          view.addSubview(tableView)
          tableView.delegate = self
          tableView.dataSource = self
-         tableView.register(ListElement.self, forCellReuseIdentifier: "cellId")
-         tableView.rowHeight = 110
+         tableView.register(DateCell.self, forCellReuseIdentifier: "dateCellId")
+         tableView.rowHeight = 100
          tableView.translatesAutoresizingMaskIntoConstraints = false
          tableView.topAnchor.constraint(equalTo: calendar.bottomAnchor).isActive = true
          tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
          tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
          tableView.backgroundColor = .white
-         tableView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+         tableView.heightAnchor.constraint(equalToConstant: 500).isActive = true
     }
     // MARK: - Calendar Configuration
     func configureCalendar()
@@ -150,7 +152,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
           self.view.addSubview(calendar)
           calendar.translatesAutoresizingMaskIntoConstraints = false
           calendar.widthAnchor.constraint(equalToConstant: self.view.frame.size.width).isActive = true
-          calendar.heightAnchor.constraint(equalToConstant: 380).isActive = true
+          calendar.heightAnchor.constraint(equalToConstant: 300).isActive = true
           calendar.topAnchor.constraint(equalTo: modeSegmentedControl.bottomAnchor ,constant: 10).isActive = true
           calendar.appearance.titleFont = UIFont.systemFont(ofSize: 17.0)
           calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 18.0)
@@ -207,33 +209,85 @@ extension HistoryViewController : UITableViewDelegate,UITableViewDataSource
    {
     return self.listOfVisit.count
    }
-   
+  
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
    {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+       let cell = tableView.dequeueReusableCell(withIdentifier: "dateCellId", for: indexPath)
        let listitem = listOfVisit[indexPath.row]
-        //TODO : - Create a Cellule Type
-     
-       
-       cell.textLabel?.text = listitem.title
-       
-       
-       return cell
+   
+   
+      guard let item = cell as? DateCell else
+      {
+          return cell
+      }
+        let date1 = listitem.startTime
+        let date2 =  String(date1?.prefix(10) ?? "FF2")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        item.title.text = listitem.title
+        item.value.text = "Prescription: \(listitem.prescription ?? "Nothing")"
+         
+        guard let date = formatter.date(from: date2) else
+        {
+            let label = UILabel()
+             label.textColor = .green
+             label.backgroundColor = .black
+             label.textAlignment = .center
+             label.text = "02"
+             label.font = UIFont.boldSystemFont(ofSize: 26)
+             let label1 = UILabel()
+             label1.textColor = .green
+             label1.backgroundColor = .black
+             label1.textAlignment = .center
+             label1.text = "August"
+             label1.font = UIFont.boldSystemFont(ofSize: 15)
+            
+            if item.DateStack.arrangedSubviews.count != 0
+            {
+                for subview in item.DateStack.arrangedSubviews
+                {
+                   subview.removeFromSuperview()
+                }
+            }
+             item.DateStack.addArrangedSubview(label1)
+             item.DateStack.addArrangedSubview(label)
+            return cell
+        }
+        
+        formatter.dateFormat = "MMMM"
+        let month = formatter.string(from: date)
+        formatter.dateFormat = "dd"
+        let day = formatter.string(from: date)
+        print( month, day)
+         
+         let label = UILabel()
+         label.textColor = .green
+         label.backgroundColor = .black
+         label.textAlignment = .center
+         label.text = day
+         label.font = UIFont.boldSystemFont(ofSize: 26)
+         let label1 = UILabel()
+         label1.textColor = .green
+         label1.backgroundColor = .black
+         label1.textAlignment = .center
+         label1.text = month
+         label1.font = UIFont.boldSystemFont(ofSize: 15)
+        
+        if item.DateStack.arrangedSubviews.count != 0
+        {
+            for subview in item.DateStack.arrangedSubviews
+            {
+               subview.removeFromSuperview()
+            }
+        }
+         item.DateStack.addArrangedSubview(label1)
+         item.DateStack.addArrangedSubview(label)
+         
+    
+       return item
    }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Events"
-    }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v = UIView()
-        v.backgroundColor = #colorLiteral(red: 0.9535095531, green: 0.9535095531, blue: 0.9535095531, alpha: 1)
-        let l = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width, height: 50))
-        l.text = "Events"
-        view.addSubview(l)
-        return v
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    
+    
     
    
 }

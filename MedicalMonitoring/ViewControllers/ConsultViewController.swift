@@ -66,14 +66,13 @@ class ConsultViewController: UIViewController {
           progressBar.radius = 15
           progressBar.progressRadius = 50
           progressBar.progressLineHeight = 3
-          progressBar.selectedBackgoundColor = .systemGreen
+          progressBar.selectedBackgoundColor = .blue
           progressBar.completedTillIndex = 3
           progressBar.centerLayerTextColor = .black // couleur de tout les elements de la barre
-         // progressBar.centerLayerDarkBackgroundTextColor = .white
           progressBar.currentSelectedTextColor = .white
-         // progressBar.centerLayerTextColor = .white
+         
           progressBar.currentSelectedCenterColor = .black // couleur du centre de l'element actuelle
-          progressBar.selectedOuterCircleStrokeColor = .systemGreen
+          progressBar.selectedOuterCircleStrokeColor = .systemBlue
           progressBar.selectedOuterCircleLineWidth = 5
           
           
