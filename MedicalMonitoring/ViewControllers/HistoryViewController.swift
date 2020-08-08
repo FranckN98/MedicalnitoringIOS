@@ -61,11 +61,14 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         {
             case 0:
                 self.calendar.scope = .week
+           
             case 1:
                 self.calendar.scope = .month
+                
             default:
                 self.calendar.scope = .month
         }
+        
     }
     
     // MARK:- Delegate
@@ -192,7 +195,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
        btn.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
        btn.clipsToBounds = true
        btn.titleLabel?.font = .systemFont(ofSize: 40)
-       btn.addTarget(self,action: #selector(self.changeCalendarMode(sender:)), for: .touchUpInside)
+      
        view.addSubview(btn)
        btn.translatesAutoresizingMaskIntoConstraints = false
        btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35).isActive = true
