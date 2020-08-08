@@ -13,8 +13,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -25,16 +23,17 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any)
     {
         // TODO: Validate Fields
-        let email = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+       /* let email = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        let passwort = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        
+        let passwort = password.text!.trimmingCharacters(in: .whitespacesAndNewlines) */
+      
+        print(username.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+        print(password.text!.trimmingCharacters(in: .whitespacesAndNewlines))
         //Signing in the user
-        Auth.auth().signIn(withEmail: email, password: passwort) { (result, error) in
+        Auth.auth().signIn(withEmail: username.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: password.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (result, error) in
             
             
-            if(error != nil)
+            if(error != nil )
             {
                 // Couldn't sign in
                 self.errorLabel.text = error!.localizedDescription
@@ -42,8 +41,10 @@ class LoginViewController: UIViewController {
             }
             else
             {
-                //Constants.userid 
-                self.performSegue(withIdentifier: "backtoInfo", sender: nil)
+                Constants.userid = Auth.auth().currentUser?.uid
+                self.username.text = ""
+                self.password.text = ""
+                self.performSegue(withIdentifier: "toMenu", sender: nil)
             }
         }
         
@@ -58,7 +59,9 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func passwordForgot(_ sender: Any) {
+    @IBAction func passwordForgot(_ sender: Any)
+    {
+        
     }
     
     /*

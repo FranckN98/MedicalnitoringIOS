@@ -110,8 +110,7 @@
                                         <rect key="frame" x="0.0" y="460" width="334" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <action selector="login:" destination="ckE-5h-tQA" eventType="touchUpInside" id="Lce-Il-sGM"/>
-                                            <segue destination="7jl-W2-dir" kind="show" identifier="toMenu" id="Hvd-dU-fN4"/>
+                                            <action selector="login:" destination="ckE-5h-tQA" eventType="touchUpInside" id="NKx-09-weV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRd-Cm-nVW">
@@ -148,6 +147,7 @@
                         <outlet property="errorLabel" destination="OuE-UF-8QG" id="Tch-W4-zVe"/>
                         <outlet property="password" destination="KFc-PS-Rit" id="UEN-dG-8Gn"/>
                         <outlet property="username" destination="Je0-Ru-ppQ" id="oQE-Lj-VlU"/>
+                        <segue destination="7jl-W2-dir" kind="show" identifier="toMenu" id="7ZE-G7-c89"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGs-KQ-wKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -259,17 +259,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UNa-sI-AJb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Menu" id="rxE-rA-vQv">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="gnN-hX-seF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d46-0c-72r" userLabel="Log Out">
-                                <rect key="frame" x="300" y="11" width="94" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="  Log Out" image="power" catalog="system">
-                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Menu" id="rxE-rA-vQv"/>
                     <connections>
                         <outlet property="chatButton" destination="gZ7-tQ-rQB" id="cfj-GI-5e1"/>
                         <outlet property="consultButton" destination="D1X-0b-ZKD" id="J0w-F3-phq"/>
@@ -321,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdA-AK-Zxq">
-                                <rect key="frame" x="30" y="782" width="50" height="50"/>
+                                <rect key="frame" x="30" y="690" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.72292564862059083" green="0.94278362807481209" blue="0.99678189766839376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CVo-WZ-03s"/>
@@ -336,7 +326,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="544-oU-LLO">
-                                <rect key="frame" x="334" y="782" width="50" height="50"/>
+                                <rect key="frame" x="334" y="690" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.69364329653362455" green="0.94762297198086853" blue="0.99338163860103623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="GcE-rz-Nee"/>
@@ -353,7 +343,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-Yn-yhY">
-                                <rect key="frame" x="15" y="309" width="384" height="278"/>
+                                <rect key="frame" x="15" y="263" width="384" height="278"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To finish search your doctor and confirm to send him your automatic consultation " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXd-7X-H5i">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="100"/>
@@ -461,8 +451,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Bk-cQB">
-                                <rect key="frame" x="32" y="155" width="350" height="627"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Bk-cQB">
+                                <rect key="frame" x="32" y="155" width="350" height="535"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-z8-4Nd">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
@@ -587,10 +577,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="39F-ca-c6l">
-                                        <rect key="frame" x="0.0" y="410" width="350" height="217"/>
+                                        <rect key="frame" x="0.0" y="410" width="350" height="125"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UTV-Lb-bDa">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="217"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="125"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insomnie" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-DL-Kxg">
                                                         <rect key="frame" x="30" y="0.0" width="100" height="90"/>
@@ -600,7 +590,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-uL-LQh" customClass="DLRadioButton">
-                                                        <rect key="frame" x="49" y="95" width="62" height="122"/>
+                                                        <rect key="frame" x="49" y="95" width="62" height="30"/>
                                                         <state key="normal" title="Insomnia"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
@@ -610,7 +600,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MGA-1K-tdh">
-                                                <rect key="frame" x="190" y="0.0" width="160" height="217"/>
+                                                <rect key="frame" x="190" y="0.0" width="160" height="125"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toux" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-mm-mr0">
                                                         <rect key="frame" x="30" y="0.0" width="100" height="90"/>
@@ -620,7 +610,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXn-f3-CbG" customClass="DLRadioButton">
-                                                        <rect key="frame" x="57" y="90" width="46" height="127"/>
+                                                        <rect key="frame" x="57" y="90" width="46" height="35"/>
                                                         <state key="normal" title="Cough"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hand.thumbsup" catalog="system"/>
@@ -645,7 +635,7 @@
                                     <constraint firstItem="tP1-Ou-Bo3" firstAttribute="height" secondItem="o6p-z8-4Nd" secondAttribute="height" id="9on-Tv-CbP"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="XlG-di-Zee">
+                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="XlG-di-Zee">
                                 <rect key="frame" x="30" y="238" width="354" height="494"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-8g-QCo">
@@ -850,7 +840,7 @@
                                             <constraint firstAttribute="height" constant="45" id="Nds-eZ-WM8"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Patient"/>
+                                            <segment title="" image="forward.end.alt" catalog="system"/>
                                             <segment title="Doctor"/>
                                         </segments>
                                         <connections>
@@ -937,10 +927,10 @@
         <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="fatigue" width="626" height="580"/>
+        <image name="forward.end.alt" catalog="system" width="128" height="71"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="124"/>
         <image name="insomnie" width="568" height="672"/>
-        <image name="power" catalog="system" width="128" height="124"/>
         <image name="rhume" width="525" height="673"/>
         <image name="teleconsultations-a-saint-joseph_img" width="700" height="390"/>
         <image name="toux" width="199" height="253"/>

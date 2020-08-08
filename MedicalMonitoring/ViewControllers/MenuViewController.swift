@@ -20,18 +20,21 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     // Log out Method
-    @IBAction func logOutTapped(_ sender: Any)
+    @objc func logOutTapped()
     {
         do {
-            try Auth.auth().signOut()
+            try
+                Auth.auth().signOut()
+            print("Effect")
             Constants.userid = "" 
-            dismiss(animated: true, completion: nil)
+            _ = navigationController?.popToRootViewController(animated: true)
             
         }
         catch{
-            
+            print("Fault")
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         infoButton.layer.cornerRadius = 25
@@ -42,9 +45,10 @@ class MenuViewController: UIViewController {
         testButton.layer.cornerRadius = 25
         userId = Auth.auth().currentUser?.uid
         Constants.userid = userId
-      //  print(Constants.userid!)
         
-        // Do any additional setup after loading the view.
+        let logoutButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(logOutTapped))
+        self.navigationItem.rightBarButtonItem = logoutButton
+
     }
     
     

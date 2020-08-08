@@ -9,7 +9,8 @@
 import UIKit
 import FlexibleSteppedProgressBar
 
-class ConsultViewController: UIViewController {
+class ConsultViewController: UIViewController
+{
 
     var progressBar: FlexibleSteppedProgressBar!
     
@@ -19,20 +20,22 @@ class ConsultViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var view4: UIStackView!
+    
     var dimension = 50
     var level = 4
     var currentLevel = 0
     var safeArea: UILayoutGuide!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         nextButton.layer.cornerRadius = 50 / 2
         prevButton.layer.cornerRadius = 50 / 2
         configureProgressbar()
         
-        
     }
     
+  
     
     @IBAction func nextButtonTapped(_ sender: Any)
     {
