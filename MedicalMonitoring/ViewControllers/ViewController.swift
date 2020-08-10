@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+class ViewController: UIViewController
+{
+    @IBOutlet weak var signup: UIButton!
+    @IBOutlet weak var signin: UIButton!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Constants.setupButton(button: signup)
+        Constants.setupButton(button: signin)
     }
 
 

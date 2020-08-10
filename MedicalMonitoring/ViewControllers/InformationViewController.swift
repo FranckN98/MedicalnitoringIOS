@@ -47,6 +47,7 @@ class InformationViewController: UIViewController
                                 ListElemen( title: "Gender", value: "", image: #imageLiteral(resourceName: "gender"),isAddedValue:false),
                                 ListElemen( title: "Diabetes", value: "", image: #imageLiteral(resourceName: "diabetes"),isAddedValue:false)
         ]
+        var btn : UIButton!
         var currentPatient : patient!
         var patientKey : String! = ""
         var otherItems : [[String:String]] = []
@@ -147,7 +148,7 @@ class InformationViewController: UIViewController
     //MARK: - Floating Button
         func floatingButton()
         {
-            let btn = UIButton(type: .custom)
+            btn = UIButton(type: .custom)
             btn.frame = CGRect(x: 325, y: 785, width: 70, height: 70)
             btn.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
             btn.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
@@ -197,6 +198,7 @@ class InformationViewController: UIViewController
             containerView.anchor(top: view.topAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 270)
             configureTableView()
             floatingButton()
+            Constants.setupFloatButton(button:btn)
             retrievingInformationFromDatabase()
         
         }

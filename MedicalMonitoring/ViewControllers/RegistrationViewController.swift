@@ -13,6 +13,7 @@ import Firebase
 class RegistrationViewController: UIViewController
 {
 
+    @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var firstnameTxtfield: UITextField!
     @IBOutlet weak var lastnameTxtfield: UITextField!
@@ -20,6 +21,7 @@ class RegistrationViewController: UIViewController
     @IBOutlet weak var passwordTxtfield: UITextField!
     @IBOutlet weak var ageTxtfield: UITextField!
     @IBOutlet weak var patientOrDoctor: UISegmentedControl!
+    
     var doctor : Bool = false;
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl)
@@ -134,9 +136,7 @@ class RegistrationViewController: UIViewController
                     // Transition to the Menu Screen
                     self.transitionToMenu()
                     
-                   
                 }
-            // Transition to the home screen
         }
         }
     }
@@ -150,20 +150,12 @@ class RegistrationViewController: UIViewController
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+         Constants.setupButton(button: signup)
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
 

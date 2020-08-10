@@ -28,6 +28,8 @@ class EditInformationViewController: UIViewController
         configureTableView()
         floatingButton1()
         floatingButton2()
+       Constants.setupFloatButton(button:btn1)
+       Constants.setupFloatButton(button:btn2)
         
     }
     
@@ -35,7 +37,7 @@ class EditInformationViewController: UIViewController
     {
         
         btn1.frame = CGRect(x: 325, y: 785, width: 70, height: 70)
-        btn1.setImage(UIImage(systemName: "tray.and.arrow.down"), for: .normal)
+        btn1.setImage(UIImage(systemName: "tray.and.arrow.down.fill"), for: .normal)
         btn1.backgroundColor = #colorLiteral(red: 0.9098526554, green: 0.9034220025, blue: 0.8536889113, alpha: 1)
         btn1.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         btn1.clipsToBounds = true

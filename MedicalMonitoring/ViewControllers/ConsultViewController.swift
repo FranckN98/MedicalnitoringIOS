@@ -29,13 +29,16 @@ class ConsultViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        nextButton.layer.cornerRadius = 50 / 2
-        prevButton.layer.cornerRadius = 50 / 2
+        nextButton.layer.cornerRadius = 60 / 2
+        prevButton.layer.cornerRadius = 60 / 2
         nextButton.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
         nextButton.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         prevButton.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
         prevButton.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         configureProgressbar()
+        Constants.setupFloatButton(button:prevButton)
+        Constants.setupFloatButton(button:nextButton)
+        
         
     }
     
@@ -62,7 +65,7 @@ class ConsultViewController: UIViewController
         // Progressbar Constraints
           progressBar.translatesAutoresizingMaskIntoConstraints = false
           progressBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-          progressBar.widthAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
+        progressBar.widthAnchor.constraint(equalToConstant: view.frame.width/1.5).isActive = true
           progressBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
           progressBar.heightAnchor.constraint(equalToConstant: 45).isActive = true
           

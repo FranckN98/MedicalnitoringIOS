@@ -71,6 +71,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Medical Monitoring" id="UOc-yz-l72"/>
+                    <connections>
+                        <outlet property="signin" destination="oa6-tM-bR3" id="wlX-cf-QKF"/>
+                        <outlet property="signup" destination="HlR-zk-3PS" id="b4y-xU-zgX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,6 +157,8 @@
                     <navigationItem key="navigationItem" title="Login" id="qhL-U0-Gzn"/>
                     <connections>
                         <outlet property="errorLabel" destination="OuE-UF-8QG" id="Tch-W4-zVe"/>
+                        <outlet property="login" destination="C2I-r6-RRa" id="pXq-Ch-Kga"/>
+                        <outlet property="pass" destination="TRd-Cm-nVW" id="xOw-ve-nEn"/>
                         <outlet property="password" destination="KFc-PS-Rit" id="UEN-dG-8Gn"/>
                         <outlet property="username" destination="Je0-Ru-ppQ" id="oQE-Lj-VlU"/>
                         <segue destination="7jl-W2-dir" kind="show" identifier="toMenu" id="7ZE-G7-c89"/>
@@ -319,31 +325,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdA-AK-Zxq">
-                                <rect key="frame" x="30" y="782" width="50" height="50"/>
+                                <rect key="frame" x="30" y="772" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.72292564862059083" green="0.94278362807481209" blue="0.99678189766839376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CVo-WZ-03s"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="EWP-33-odw"/>
+                                    <constraint firstAttribute="height" constant="60" id="CVo-WZ-03s"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="EWP-33-odw"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dcG-hn-mif"/>
-                                    <constraint firstAttribute="width" constant="50" id="lQU-pu-Uf8"/>
+                                    <constraint firstAttribute="width" constant="60" id="lQU-pu-Uf8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" image="chevron.left.circle" catalog="system"/>
+                                <state key="normal" image="arrow.left.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="prevButtonTapped:" destination="sbV-b5-Wf8" eventType="touchUpInside" id="XuL-l5-vdI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="544-oU-LLO">
-                                <rect key="frame" x="334" y="782" width="50" height="50"/>
+                                <rect key="frame" x="324" y="772" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.69364329653362455" green="0.94762297198086853" blue="0.99338163860103623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="GcE-rz-Nee"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="XNF-AO-2zH"/>
-                                    <constraint firstAttribute="height" constant="50" id="uEl-E6-ugh"/>
-                                    <constraint firstAttribute="width" constant="50" id="ykn-uy-I9j"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="GcE-rz-Nee"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="XNF-AO-2zH"/>
+                                    <constraint firstAttribute="height" constant="60" id="uEl-E6-ugh"/>
+                                    <constraint firstAttribute="width" constant="60" id="ykn-uy-I9j"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" image="chevron.right.circle" catalog="system">
+                                <state key="normal" image="arrow.right.circle.fill" catalog="system">
                                     <color key="titleShadowColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -460,7 +466,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Bk-cQB">
-                                <rect key="frame" x="32" y="132" width="350" height="650"/>
+                                <rect key="frame" x="32" y="122" width="350" height="650"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-z8-4Nd">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
@@ -903,6 +909,7 @@
                         <outlet property="lastnameTxtfield" destination="i03-vx-YDC" id="UsP-Ks-adG"/>
                         <outlet property="passwordTxtfield" destination="9Ay-TA-LCx" id="OCN-pP-75M"/>
                         <outlet property="patientOrDoctor" destination="fV6-Ma-MGx" id="3p3-jT-scJ"/>
+                        <outlet property="signup" destination="YX6-Ru-Gd5" id="C2F-LZ-Xac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OY2-Tk-cPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -931,8 +938,8 @@
     <resources>
         <image name="87524" width="720" height="480"/>
         <image name="Telemedicine+Let’s+Talk+Intro+by+moderator,+covering-+Welcome" width="1024" height="576"/>
-        <image name="chevron.left.circle" catalog="system" width="128" height="121"/>
-        <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.left.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="fatigue" width="626" height="580"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>

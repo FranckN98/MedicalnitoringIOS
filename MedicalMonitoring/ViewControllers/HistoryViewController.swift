@@ -19,7 +19,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
     var formatter = DateFormatter()
     var datesWithEvents = [String]()
     var listOfVisit = [Visit]()
-
+    var btn : UIButton!
     var datesWithMultipleEvents = ["2020-09-08", "2020-08-06", "2020-10-20", "2020-10-28","2020-08-08", "2020-08-16", "2020-07-20", "2020-08-28"] //test
 
     fileprivate lazy var dateFormatter2: DateFormatter = {
@@ -49,6 +49,7 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         configureTableView()
         retrievingInformationFromDatabase()
         floatingButton()
+        Constants.setupFloatButton(button: btn)
         
        
     }
@@ -188,10 +189,9 @@ class HistoryViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
     // MARK
    func floatingButton()
    {
-       let btn = UIButton(type: .custom)
+        btn = UIButton(type: .custom)
        btn.frame = CGRect(x: 325, y: 785, width: 70, height: 70)
        btn.setImage(UIImage(systemName: "plus")?.withTintColor(.white), for: .normal)
-       btn.backgroundColor = #colorLiteral(red: 0.2736301115, green: 0.7592733637, blue: 1, alpha: 1)
        btn.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
        btn.clipsToBounds = true
        btn.titleLabel?.font = .systemFont(ofSize: 40)

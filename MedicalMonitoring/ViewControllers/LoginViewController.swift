@@ -13,8 +13,12 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Constants.setupButton(button: login)
+        Constants.setupButton(button: pass)
     }
     
+    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var pass: UIButton!
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -42,6 +46,7 @@ class LoginViewController: UIViewController {
             else
             {
                 Constants.userid = Auth.auth().currentUser?.uid
+                self.errorLabel.alpha = 0
                 self.username.text = ""
                 self.password.text = ""
                 self.performSegue(withIdentifier: "toMenu", sender: nil)
